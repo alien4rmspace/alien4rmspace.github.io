@@ -35,7 +35,7 @@ and JavaScript so it stays fast, lightweight, and easy to edit.
 1. Update GitHub, LinkedIn, email, and project repository links in `index.html`.
 2. Replace the project media placeholders with screenshots or charts stored in
    `assets/projects/`.
-3. Update `assets/resume/Damian-Saelee-Resume.pdf` whenever you refresh your resume.
+3. Keep public resume content in `resume.html` trimmed to only the details you want indexed and shared.
 4. Re-read the project summaries and make sure they match your final wording.
 
 ## Deploying To GitHub Pages
@@ -54,5 +54,5 @@ and JavaScript so it stays fast, lightweight, and easy to edit.
 - Add real demo/details links if you have videos, profiler screenshots, or
   write-ups.
 - Add screenshots, charts, or trace images for each project.
-- Decide whether the embedded resume page and public PDF flow should stay public long-term.
+- Decide whether you want to keep the current summary-only resume page or add a separate sanitized PDF later.
 - Review all metrics and wording one more time before publishing.
