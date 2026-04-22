@@ -27,13 +27,31 @@
       <div class="ambient-orb ambient-orb-two" aria-hidden="true"></div>
 
       <header class="site-header" data-site-header>
-        <a class="brand" href="#top" aria-label="Damian Saelee home">
-          <span class="brand-mark">DS</span>
-          <span class="brand-text">
-            <span class="brand-name">Damian Saelee</span>
-            <span class="brand-role">Computer Science Student</span>
-          </span>
-        </a>
+        <div class="site-header-leading">
+          <a class="brand" href="#top" aria-label="Damian Saelee home">
+            <span class="brand-mark">DS</span>
+            <span class="brand-text">
+              <span class="brand-name">Damian Saelee</span>
+              <span class="brand-role">Computer Science Student</span>
+            </span>
+          </a>
+
+          <a
+            class="header-github"
+            href="https://github.com/alien4rmspace"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Damian Saelee GitHub profile"
+          >
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 2C6.477 2 2 6.589 2 12.248c0 4.526 2.865 8.367 6.839 9.722.5.095.682-.221.682-.492 0-.243-.009-.887-.014-1.742-2.782.617-3.369-1.369-3.369-1.369-.455-1.177-1.11-1.491-1.11-1.491-.908-.637.069-.624.069-.624 1.004.072 1.532 1.053 1.532 1.053.892 1.565 2.341 1.113 2.91.851.091-.662.349-1.114.635-1.37-2.221-.259-4.556-1.137-4.556-5.062 0-1.118.389-2.032 1.029-2.748-.103-.259-.446-1.301.098-2.712 0 0 .84-.276 2.75 1.05A9.36 9.36 0 0 1 12 6.836a9.36 9.36 0 0 1 2.503.348c1.909-1.326 2.748-1.05 2.748-1.05.546 1.411.202 2.453.1 2.712.64.716 1.027 1.63 1.027 2.748 0 3.935-2.338 4.799-4.566 5.053.359.318.679.947.679 1.909 0 1.379-.012 2.491-.012 2.83 0 .273.18.591.688.49C19.138 20.612 22 16.772 22 12.248 22 6.589 17.523 2 12 2Z"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
 
         <nav class="site-nav" aria-label="Primary">
           <a href="#about">About</a>
@@ -76,10 +94,10 @@
             </div>
 
             <ul class="hero-chips" aria-label="Quick highlights">
-              <li>370x GPU speedup validated with profiling</li>
-              <li>200s to 66s ML training pipeline reduction</li>
-              <li>15s to 8s inference optimization</li>
-              <li>Unity multiplayer and server-authoritative systems</li>
+              <li>370x GPU speedup</li>
+              <li>200s -&gt; 66s training runtime</li>
+              <li>15s -&gt; 8s inference</li>
+              <li>Server-authoritative multiplayer systems</li>
             </ul>
           </div>
 
@@ -176,6 +194,9 @@
                 <div>
                   <p class="project-index">Project 01</p>
                   <h3>CUDA-Accelerated Mandelbrot Renderer</h3>
+                  <p class="project-impact">
+                    374 ms -&gt; 1.0 ms frame time with Nsight-validated ~370x speedup
+                  </p>
                   <p class="project-summary">
                     CUDA Mandelbrot renderer with smooth deep-zoom support,
                     Nsight and NVTX profiling, and a measured ~370x speedup
@@ -192,10 +213,14 @@
                   >
                     GitHub
                   </a>
-                  <!-- TODO: Replace this placeholder with a demo, write-up, or benchmark page. -->
-                  <button class="button button-outline" type="button" disabled>
-                    Details / Demo
-                  </button>
+                  <a
+                    class="button button-secondary"
+                    href="https://github.com/alien4rmspace/Mandelbrot-Set-CUDA/blob/main/README.md"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    README
+                  </a>
                 </div>
               </div>
 
@@ -280,7 +305,10 @@
               <div class="project-topbar">
                 <div>
                   <p class="project-index">Project 02</p>
-                  <h3>GPU-Accelerated Pokemon Card Classifier</h3>
+                  <h3>GPU-Accelerated Pok&eacute;mon Card Classifier</h3>
+                  <p class="project-impact">
+                    199.871 s -&gt; 66.714 s 5-epoch runtime after end-to-end pipeline tuning
+                  </p>
                   <p class="project-summary">
                     End-to-end ML systems project combining asynchronous
                     dataset collection, label normalization, ResNet-18
@@ -297,24 +325,28 @@
                   >
                     GitHub
                   </a>
-                  <!-- TODO: Replace this placeholder with a notebook, report, or demo page. -->
-                  <button class="button button-outline" type="button" disabled>
-                    Details / Demo
-                  </button>
+                  <a
+                    class="button button-secondary"
+                    href="https://github.com/alien4rmspace/pokemon-card-classifier-cuda/blob/main/README.md"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    README
+                  </a>
                 </div>
               </div>
 
               <div class="project-grid">
                 <div class="project-copy">
                   <p>
-                    Built a Pokemon card image classification pipeline in
+                    Built a Pok&eacute;mon card image classification pipeline in
                     Python using PyTorch, Torchvision, and CUDA, with
                     asynchronous dataset collection through TCGdex and aiohttp
                     plus automated train/validation/test organization.
                   </p>
                   <p>
                     Added label normalization to collapse noisy card names and
-                    card-specific variants into base Pokemon identities, which
+                    card-specific variants into base Pok&eacute;mon identities, which
                     kept the supervised dataset more consistent and reduced
                     label noise during training.
                   </p>
@@ -331,11 +363,11 @@
 
                   <ul class="project-points">
                     <li>Collected card images asynchronously with TCGdex and aiohttp</li>
-                    <li>Normalized labels like card variants into base Pokemon identities</li>
+                    <li>Normalized labels like card variants into base Pok&eacute;mon identities</li>
                     <li>Used Nsight Systems plus NVTX to tune DataLoader throughput, not just model code</li>
                   </ul>
 
-                  <ul class="tag-list" aria-label="Pokemon classifier stack">
+                  <ul class="tag-list" aria-label="Pok&eacute;mon classifier stack">
                     <li>Python</li>
                     <li>PyTorch</li>
                     <li>Torchvision</li>
@@ -393,6 +425,9 @@
                 <div>
                   <p class="project-index">Project 03</p>
                   <h3>Multiplayer Zombie RTS / Survival Game</h3>
+                  <p class="project-impact">
+                    Server-authoritative NGO + PlayFab/Azure flow with zombie LOD scaling for 300+ enemies
+                  </p>
                   <p class="project-summary">
                     Server-authoritative Unity co-op survival project with
                     dedicated server orchestration, PlayFab and Azure
@@ -410,10 +445,14 @@
                   >
                     GitHub
                   </a>
-                  <!-- TODO: Replace this placeholder with gameplay footage, architecture notes, or a deployment write-up. -->
-                  <button class="button button-outline" type="button" disabled>
-                    Details / Demo
-                  </button>
+                  <a
+                    class="button button-secondary"
+                    href="https://github.com/alien4rmspace/Just-Scavenge-Multiplayer/blob/main/README.md"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    README
+                  </a>
                 </div>
               </div>
 
@@ -567,16 +606,15 @@
           <div class="resume-card">
             <div>
               <p class="eyebrow">Resume</p>
-              <h2>Resume page with a larger embedded viewer and direct PDF access.</h2>
+              <h2>Resume with project, tooling, and performance-focused engineering experience.</h2>
               <p class="section-text">
-                The resume page is designed to let recruiters view the PDF
-                directly on the site without a cramped left-aligned embed, while
-                still offering standard open and download options.
+                View the full resume page or open the PDF directly for a quick
+                scan of projects, tools, and results.
               </p>
             </div>
 
             <div class="resume-actions">
-              <a class="button button-primary" href="resume.html">Open Resume Page</a>
+              <a class="button button-primary" href="resume.html">View Resume Page</a>
               <a
                 class="button button-secondary"
                 href="assets/resume/Damian-Saelee-Resume.pdf"
