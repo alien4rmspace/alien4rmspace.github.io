@@ -39,7 +39,7 @@
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
-          <a href="#resume">Resume</a>
+          <a href="resume.html">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -177,9 +177,9 @@
                   <p class="project-index">Project 01</p>
                   <h3>CUDA-Accelerated Mandelbrot Renderer</h3>
                   <p class="project-summary">
-                    Parallel fractal rendering in C++ and CUDA, profiled with
-                    NVIDIA tooling to validate a real speedup over a CPU
-                    baseline.
+                    CUDA Mandelbrot renderer with smooth deep-zoom support,
+                    Nsight and NVTX profiling, and a measured ~370x speedup
+                    over the single-threaded CPU path.
                   </p>
                 </div>
 
@@ -202,29 +202,34 @@
               <div class="project-grid">
                 <div class="project-copy">
                   <p>
-                    Built a Mandelbrot renderer in C++ with CUDA acceleration,
-                    distributing per-pixel fractal work across the GPU to
-                    increase rendering throughput substantially compared to a CPU
-                    implementation.
+                    Built a Mandelbrot renderer in C++ and CUDA that maps
+                    pixels independently across the GPU, enabling smooth
+                    real-time zooming and deeper fractal renders without the
+                    frame stalls of the original CPU path.
                   </p>
                   <p>
-                    Instrumented CPU and GPU execution with NVIDIA Nsight
-                    Systems and NVTX markers to separate phases of execution,
-                    inspect bottlenecks, and make performance claims based on
-                    traces rather than guesswork.
+                    Instrumented the render loop with NVIDIA Nsight Systems and
+                    NVTX markers to trace both CPU and GPU execution. Profiling
+                    exposed a state-management bug where
+                    <code>ComplexPlane::updateRender()</code> kept rerunning
+                    because the app failed to transition from
+                    <code>CALCULATING</code> to <code>DISPLAYING</code>,
+                    causing unnecessary recomputation every frame.
                   </p>
                   <p>
-                    The result was about a 370x speedup, with example frame
-                    timings dropping from about 374 ms on CPU to about 1.0 ms on
-                    GPU. The project emphasizes parallel work distribution,
-                    throughput, deep-zoom rendering, and performance-oriented
-                    design backed by measurement.
+                    After fixing the render-state transition and validating the
+                    CUDA path, full-frame time dropped from about 374 ms on CPU
+                    to about 1.0 ms on GPU, with the Mandelbrot kernel taking
+                    about 0.87 ms and the remaining ~0.13 ms spent in CPU-side
+                    post-processing and vertex/color updates. The project
+                    emphasizes parallel work distribution, profiling-led
+                    debugging, and measurable throughput gains backed by traces.
                   </p>
 
                   <ul class="project-points">
-                    <li>Mapped pixels in parallel on the GPU for fractal generation</li>
-                    <li>Used NVTX markers to make traces easier to interpret</li>
-                    <li>Focused on measurable speedup instead of vague optimization claims</li>
+                    <li>Distributed per-pixel escape-time computation across the GPU for parallel fractal generation</li>
+                    <li>Used Nsight Systems and NVTX to isolate redundant recomputation in the render loop</li>
+                    <li>Quantified remaining CPU-side post-processing after the kernel to guide next optimizations</li>
                   </ul>
 
                   <ul class="tag-list" aria-label="CUDA Mandelbrot stack">
@@ -239,32 +244,32 @@
                 <aside class="project-sidebar">
                   <div class="stat-card">
                     <span class="stat-value">370x</span>
-                    <span class="stat-label">Speedup vs. CPU baseline</span>
+                    <span class="stat-label">Speedup vs. CPU render path</span>
                   </div>
                   <div class="stat-card">
                     <span class="stat-value">374 ms</span>
-                    <span class="stat-label">Example CPU frame time</span>
+                    <span class="stat-label">CPU updateRender timing</span>
                   </div>
                   <div class="stat-card">
                     <span class="stat-value">1.0 ms</span>
-                    <span class="stat-label">Example GPU frame time</span>
+                    <span class="stat-label">GPU frame time</span>
                   </div>
                 </aside>
               </div>
 
               <div class="project-media">
-                <!-- TODO: Replace this placeholder with a Mandelbrot render, benchmark chart, or Nsight timeline image. -->
+                <!-- TODO: Replace this placeholder with the deep-zoom demo, an Nsight before/after timeline, or a rendered Mandelbrot screenshot. -->
                 <div class="media-placeholder media-placeholder-cuda">
                   <div class="media-placeholder-header">
                     <span>Suggested asset</span>
-                    <span>Profiler trace or rendered output</span>
+                    <span>Deep-zoom demo or Nsight before/after trace</span>
                   </div>
                   <div class="media-placeholder-body">
                     <div class="media-block media-block-fractal"></div>
                     <div class="media-metrics">
-                      <span>CPU render path</span>
-                      <span>GPU kernel launch</span>
-                      <span>NVTX-instrumented regions</span>
+                      <span>State-machine bug trace</span>
+                      <span>0.87 ms CUDA kernel</span>
+                      <span>CPU post-processing remains</span>
                     </div>
                   </div>
                 </div>
@@ -277,8 +282,9 @@
                   <p class="project-index">Project 02</p>
                   <h3>GPU-Accelerated Pokemon Card Classifier</h3>
                   <p class="project-summary">
-                    End-to-end image classification pipeline tuned for training
-                    and inference throughput, not just model accuracy.
+                    End-to-end ML systems project combining asynchronous
+                    dataset collection, label normalization, ResNet-18
+                    fine-tuning, and Nsight-driven throughput optimization.
                   </p>
                 </div>
 
@@ -301,38 +307,42 @@
               <div class="project-grid">
                 <div class="project-copy">
                   <p>
-                    Built a Pokemon card recognition pipeline in Python using
-                    PyTorch and CUDA, fine-tuning a ResNet-18 model on a custom
-                    dataset with automated data collection and preprocessing.
+                    Built a Pokemon card image classification pipeline in
+                    Python using PyTorch, Torchvision, and CUDA, with
+                    asynchronous dataset collection through TCGdex and aiohttp
+                    plus automated train/validation/test organization.
                   </p>
                   <p>
-                    Profiled the training pipeline with NVIDIA Nsight Systems
-                    and NVTX to understand where time was going across model
-                    execution and data loading, then tuned the input pipeline and
-                    DataLoader settings to reduce bottlenecks.
+                    Added label normalization to collapse noisy card names and
+                    card-specific variants into base Pokemon identities, which
+                    kept the supervised dataset more consistent and reduced
+                    label noise during training.
                   </p>
                   <p>
-                    Reduced 5-epoch training time from about 200 seconds to
-                    about 66 seconds and reduced inference time from about 15
-                    seconds to about 8 seconds. The project shows machine
-                    learning systems thinking, GPU-aware profiling, and a focus
-                    on end-to-end throughput.
+                    Profiled GPU execution and CPU-side input stalls with
+                    NVIDIA Nsight Systems and NVTX markers, then tuned the
+                    DataLoader pipeline instead of treating model code as the
+                    only bottleneck. The final 5-epoch run dropped from 199.871
+                    s to 66.714 s, a 66.6% runtime reduction and roughly 3.0x
+                    speedup driven by better worker settings, persistent
+                    workers, pinned memory, non-blocking transfers, and
+                    `prefetch_factor=4`.
                   </p>
 
                   <ul class="project-points">
-                    <li>Fine-tuned ResNet-18 on a custom image classification dataset</li>
-                    <li>Explored DataLoader and num_workers tradeoffs for throughput</li>
-                    <li>Treated the ML pipeline as a performance system, not just a model</li>
+                    <li>Collected card images asynchronously with TCGdex and aiohttp</li>
+                    <li>Normalized labels like card variants into base Pokemon identities</li>
+                    <li>Used Nsight Systems plus NVTX to tune DataLoader throughput, not just model code</li>
                   </ul>
 
                   <ul class="tag-list" aria-label="Pokemon classifier stack">
                     <li>Python</li>
                     <li>PyTorch</li>
+                    <li>Torchvision</li>
                     <li>CUDA</li>
-                    <li>scikit-learn</li>
-                    <li>NumPy</li>
-                    <li>pandas</li>
-                    <li>Matplotlib</li>
+                    <li>asyncio</li>
+                    <li>aiohttp</li>
+                    <li>TCGdex API / SDK</li>
                     <li>NVIDIA Nsight Systems</li>
                     <li>NVTX</li>
                   </ul>
@@ -340,26 +350,26 @@
 
                 <aside class="project-sidebar">
                   <div class="stat-card">
-                    <span class="stat-value">200s to 66s</span>
-                    <span class="stat-label">5-epoch training time</span>
+                    <span class="stat-value">199.871s to 66.714s</span>
+                    <span class="stat-label">5-epoch training runtime</span>
                   </div>
                   <div class="stat-card">
-                    <span class="stat-value">15s to 8s</span>
-                    <span class="stat-label">Inference time reduction</span>
+                    <span class="stat-value">66.6%</span>
+                    <span class="stat-label">Runtime reduction from pipeline tuning</span>
                   </div>
                   <div class="stat-card">
-                    <span class="stat-value">Profiled</span>
-                    <span class="stat-label">Nsight Systems + NVTX + DataLoader tuning</span>
+                    <span class="stat-value">28.2s to 12.4s</span>
+                    <span class="stat-label">Early epoch training improvement with tuned workers</span>
                   </div>
                 </aside>
               </div>
 
               <div class="project-media">
-                <!-- TODO: Replace this placeholder with a confusion matrix, throughput chart, or Nsight timeline screenshot. -->
+                <!-- TODO: Replace this placeholder with your Nsight Systems screenshots or the baseline-vs-optimized training chart from the repo README. -->
                 <div class="media-placeholder media-placeholder-ml">
                   <div class="media-placeholder-header">
                     <span>Suggested asset</span>
-                    <span>Training throughput chart or profiler view</span>
+                    <span>Nsight timeline or baseline-vs-optimized training chart</span>
                   </div>
                   <div class="media-placeholder-body">
                     <div class="media-chart">
@@ -369,9 +379,9 @@
                       <span class="chart-bar chart-bar-mid"></span>
                     </div>
                     <div class="media-metrics">
-                      <span>Input pipeline</span>
-                      <span>num_workers tuning</span>
-                      <span>GPU training + inference</span>
+                      <span>Async dataset collection</span>
+                      <span>Label normalization + DataLoader tuning</span>
+                      <span>GPU training throughput profiling</span>
                     </div>
                   </div>
                 </div>
