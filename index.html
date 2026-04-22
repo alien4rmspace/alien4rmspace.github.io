@@ -283,19 +283,56 @@
               </div>
 
               <div class="project-media">
-                <!-- TODO: Replace this placeholder with the deep-zoom demo, an Nsight before/after timeline, or a rendered Mandelbrot screenshot. -->
                 <div class="media-placeholder media-placeholder-cuda">
                   <div class="media-placeholder-header">
-                    <span>Suggested asset</span>
-                    <span>Deep-zoom demo or Nsight before/after trace</span>
+                    <span>Profiler evidence</span>
+                    <span>Nsight Systems traces for render-state bug and CPU/GPU timing</span>
                   </div>
-                  <div class="media-placeholder-body">
-                    <div class="media-block media-block-fractal"></div>
-                    <div class="media-metrics">
-                      <span>State-machine bug trace</span>
-                      <span>0.87 ms CUDA kernel</span>
-                      <span>CPU post-processing remains</span>
-                    </div>
+                  <div class="project-evidence-grid">
+                    <figure class="project-evidence-card">
+                      <div class="project-evidence-frame">
+                        <img
+                          src="assets/projects/mandelbrot-nsight-repeated-update-render.png"
+                          alt="Nsight Systems timeline showing repeated executions of ComplexPlane updateRender caused by failing to transition from CALCULATING to DISPLAYING."
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption class="project-evidence-caption">
+                        <span class="project-evidence-badge project-evidence-badge-trace">Trace issue</span>
+                        <strong>Repeated updateRender calls from a state-transition bug</strong>
+                        <span>Nsight Systems timeline showing repeated executions of <code>ComplexPlane::updateRender()</code> caused by failing to transition from <code>CALCULATING</code> to <code>DISPLAYING</code>. The missing state update resulted in unnecessary recomputation each render loop iteration.</span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="project-evidence-card">
+                      <div class="project-evidence-frame">
+                        <img
+                          src="assets/projects/mandelbrot-nsight-cpu-timing.png"
+                          alt="Nsight Systems timing view for ComplexPlane updateRender on the CPU showing about 374 milliseconds for a single full-frame Mandelbrot computation."
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption class="project-evidence-caption">
+                        <span class="project-evidence-badge project-evidence-badge-cpu">CPU path</span>
+                        <strong>CPU timing: ~374 ms per full-frame render</strong>
+                        <span>Nsight Systems timing of <code>ComplexPlane::updateRender()</code> executed on the CPU. The function takes about 374 ms for a single full-frame Mandelbrot computation.</span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="project-evidence-card">
+                      <div class="project-evidence-frame">
+                        <img
+                          src="assets/projects/mandelbrot-nsight-gpu-timing.png"
+                          alt="Nsight Systems timing view for ComplexPlane updateRender on the GPU showing about 1.0 milliseconds total with roughly 0.87 milliseconds in the CUDA kernel."
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption class="project-evidence-caption">
+                        <span class="project-evidence-badge project-evidence-badge-gpu">GPU path</span>
+                        <strong>GPU timing: ~1.0 ms total with ~0.87 ms in the CUDA kernel</strong>
+                        <span>Nsight Systems timing of <code>ComplexPlane::updateRender()</code> executed on the GPU. The total per-frame execution time is ~1.0 ms, with the Mandelbrot CUDA kernel accounting for ~0.87 ms. The remaining ~0.13 ms is spent in a single-threaded CPU loop responsible for post-processing and vertex/color updates, indicating potential for further optimization by reducing CPU-side work.</span>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>
