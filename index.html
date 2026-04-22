@@ -7,7 +7,7 @@
       name="description"
       content="Damian Saelee is a Computer Science student focused on GPU programming, machine learning systems, performance engineering, parallel computing, and systems-oriented software development."
     />
-    <meta name="theme-color" content="#f6eee5" />
+    <meta name="theme-color" content="#f7f2ea" />
     <title>Damian Saelee | GPU Programming, ML, and Systems Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -394,9 +394,10 @@
                   <p class="project-index">Project 03</p>
                   <h3>Multiplayer Zombie RTS / Survival Game</h3>
                   <p class="project-summary">
-                    Unity multiplayer project centered on server-authoritative
-                    logic, synchronized gameplay systems, and architecture that
-                    can scale beyond a local prototype.
+                    Server-authoritative Unity co-op survival project with
+                    dedicated server orchestration, PlayFab and Azure
+                    matchmaking flow, and LOD-based zombie synchronization for
+                    large AI counts.
                   </p>
                 </div>
 
@@ -419,73 +420,81 @@
               <div class="project-grid">
                 <div class="project-copy">
                   <p>
-                    Built a multiplayer zombie survival and RTS-style game in
-                    Unity using Netcode for GameObjects, with a focus on
-                    server-authoritative state, networked interactions, and the
-                    complexity of syncing units, zombies, and player actions.
+                    Built a top-down co-op zombie survival and extraction game
+                    in Unity using Netcode for GameObjects, centered on
+                    server-authoritative gameplay where clients send inputs via
+                    <code>ServerRpc</code> and receive replicated state through
+                    <code>NetworkVariables</code> and <code>ClientRpc</code>.
                   </p>
                   <p>
-                    Designed gameplay systems with scalability and performance in
-                    mind, thinking early about state ownership, synchronization,
-                    and how the project could evolve from gameplay code into a
-                    more production-oriented multiplayer stack.
+                    Extended the project beyond local multiplayer by wiring a
+                    dedicated server flow through PlayFab login and
+                    matchmaking, an Azure Function that hides public API keys
+                    and allocates servers, and a Dockerized PlayFab server
+                    build managed through GSDK lifecycle callbacks and NGO
+                    startup.
                   </p>
                   <p>
-                    Explored supporting infrastructure using Dockerized server
-                    concepts alongside PlayFab and Azure Functions, showing a
-                    willingness to work across gameplay, backend, and deployment
-                    concerns instead of treating networking as an afterthought.
+                    Focused heavily on simulation cost and network overhead. A
+                    custom <code>ZombieSyncManager</code> applies a 3-tier LOD
+                    strategy that reduces AI update frequency and disables
+                    <code>NetworkTransform</code> for distant zombies, helping
+                    the game scale to 300+ zombies while profiling at about
+                    0.15 ms for 203 simultaneous zombies. Server testing on a
+                    2 vCPU PlayFab VM ran at roughly 18% CPU and ~300 MB memory
+                    with 300 zombies active.
                   </p>
 
                   <ul class="project-points">
-                    <li>Focused on multiplayer architecture and server authority</li>
-                    <li>Worked on syncing units, zombies, and multiplayer interactions</li>
-                    <li>Extended the project into backend and deployment-adjacent concerns</li>
+                    <li>Implemented server-authoritative units, projectiles, damage, and zombie AI</li>
+                    <li>Built a PlayFab plus Azure Functions allocation path for dedicated multiplayer servers</li>
+                    <li>Optimized AI and sync cost with a 3-tier zombie LOD system for large enemy counts</li>
                   </ul>
 
                   <ul class="tag-list" aria-label="Multiplayer game stack">
                     <li>Unity</li>
                     <li>C#</li>
                     <li>Netcode for GameObjects</li>
+                    <li>PlayFab Multiplayer Servers</li>
+                    <li>PlayFab GSDK</li>
                     <li>Docker</li>
-                    <li>PlayFab</li>
                     <li>Azure Functions</li>
                   </ul>
                 </div>
 
                 <aside class="project-sidebar">
                   <div class="stat-card">
-                    <span class="stat-value">Authoritative</span>
-                    <span class="stat-label">Server-owned gameplay state</span>
+                    <span class="stat-value">300+</span>
+                    <span class="stat-label">Zombie target scale for the sync and AI LOD system</span>
                   </div>
                   <div class="stat-card">
-                    <span class="stat-value">Networked</span>
-                    <span class="stat-label">Units, zombies, and interactions synced</span>
+                    <span class="stat-value">0.15 ms</span>
+                    <span class="stat-label">ZombieSyncManager profile time at 203 simultaneous zombies</span>
                   </div>
                   <div class="stat-card">
-                    <span class="stat-value">Cross-stack</span>
-                    <span class="stat-label">Gameplay, backend, and deployment exploration</span>
+                    <span class="stat-value">~18% CPU</span>
+                    <span class="stat-label">Per-instance server usage on 2 vCPU hardware with 300 zombies</span>
                   </div>
                 </aside>
               </div>
 
               <div class="project-media">
-                <!-- TODO: Replace this placeholder with gameplay screenshots, architecture diagrams, or deployment notes. -->
+                <!-- TODO: Replace this placeholder with the PlayFab architecture diagram, cloud gameplay clip, or zombie LOD profiler capture from the repo README. -->
                 <div class="media-placeholder media-placeholder-systems">
                   <div class="media-placeholder-header">
                     <span>Suggested asset</span>
-                    <span>Gameplay view or multiplayer architecture diagram</span>
+                    <span>Cloud architecture diagram or multiplayer gameplay clip</span>
                   </div>
                   <div class="media-placeholder-body">
                     <div class="network-diagram">
-                      <span>Client</span>
-                      <span>Authoritative server</span>
-                      <span>Cloud services</span>
+                      <span>Client + matchmaking</span>
+                      <span>Dedicated NGO server</span>
+                      <span>PlayFab + Azure flow</span>
                     </div>
                     <div class="media-metrics">
-                      <span>Netcode sync</span>
-                      <span>PlayFab + Azure support services</span>
-                      <span>Dockerized server concepts</span>
+                      <span>ServerRpc and NetworkVariable gameplay</span>
+                      <span>Zombie LOD and sync-rate control</span>
+                      <span>Dockerized PlayFab server lifecycle</span>
                     </div>
                   </div>
                 </div>
@@ -641,11 +650,11 @@
               rel="noreferrer"
             >
               <div class="contact-card-top">
-                <span class="contact-icon contact-icon-linkedin" aria-hidden="true">
+                <span class="contact-icon contact-icon-message" aria-hidden="true">
                   <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path
                       fill="currentColor"
-                      d="M6.94 8.5H3.56V19.5h3.38V8.5Zm.22-3.4c0-1.08-.8-1.95-1.91-1.95-1.1 0-1.91.87-1.91 1.95 0 1.08.8 1.95 1.88 1.95h.02c1.12 0 1.92-.87 1.92-1.95ZM20.44 12.69c0-3.31-1.73-4.85-4.04-4.85-1.86 0-2.69 1.05-3.16 1.79V8.5H9.86c.04.75 0 11 0 11h3.38v-6.14c0-.33.02-.66.12-.89.26-.66.85-1.35 1.84-1.35 1.3 0 1.82 1.02 1.82 2.51v5.87H20.4v-6.81h.04Z"
+                      d="M4 5.75A2.75 2.75 0 0 1 6.75 3h10.5A2.75 2.75 0 0 1 20 5.75v7.5A2.75 2.75 0 0 1 17.25 16H9.81l-3.97 3.4A.75.75 0 0 1 4.6 18.8V16.9A2.75 2.75 0 0 1 4 13.25v-7.5Zm2.75-1.25A1.25 1.25 0 0 0 5.5 5.75v7.5c0 .69.56 1.25 1.25 1.25h.6a.75.75 0 0 1 .75.75v1.92l3-2.57a.75.75 0 0 1 .49-.18h5.66c.69 0 1.25-.56 1.25-1.25v-7.5c0-.69-.56-1.25-1.25-1.25H6.75Zm1.5 4a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z"
                     />
                   </svg>
                 </span>
