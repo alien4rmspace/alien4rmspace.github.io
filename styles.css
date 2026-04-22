@@ -839,6 +839,53 @@ h2 {
   padding: 4.5rem 0 1.5rem;
 }
 
+.resume-viewer-section {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin-inline: auto;
+  padding-bottom: 1.25rem;
+}
+
+.resume-viewer-shell {
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+}
+
+.resume-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.resume-viewer-copy {
+  max-width: 32rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.resume-viewer-frame {
+  width: 100%;
+  min-height: 70rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: white;
+}
+
+.resume-viewer-fallback {
+  display: grid;
+  gap: 1rem;
+  place-items: start;
+  padding: 2rem;
+  color: var(--text-soft);
+}
+
 .resume-lead {
   max-width: 52rem;
   margin-bottom: 1.6rem;
@@ -886,6 +933,10 @@ h2 {
     flex-direction: column;
   }
 
+  .resume-viewer-header {
+    flex-direction: column;
+  }
+
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -910,6 +961,10 @@ h2 {
     width: min(calc(100% - 1rem), calc(var(--max-width) + 1rem));
     padding: 1rem;
     border-radius: 1.6rem;
+  }
+
+  .resume-viewer-frame {
+    min-height: 42rem;
   }
 
   .hero-panel-grid,
