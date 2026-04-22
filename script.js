@@ -99,8 +99,11 @@ if (evidenceFrames.length > 0) {
   const openLightbox = (frame) => {
     const image = frame.querySelector("img");
     const figure = frame.closest(".project-evidence-card");
-    const title = figure?.querySelector("strong")?.textContent?.trim() || image.alt;
-    const body = figure?.querySelector(".project-evidence-caption span:last-child")?.textContent?.trim() || image.alt;
+    const title = figure?.querySelector("strong")?.textContent?.trim() || image?.alt || "Project image";
+    const body =
+      figure?.querySelector(".project-evidence-caption span:last-child")?.textContent?.trim() ||
+      image?.alt ||
+      "";
 
     if (!image) {
       return;
