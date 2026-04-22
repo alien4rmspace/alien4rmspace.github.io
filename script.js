@@ -1,7 +1,17 @@
 const yearElement = document.querySelector("#year");
+const siteHeader = document.querySelector("[data-site-header]");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear().toString();
+}
+
+if (siteHeader) {
+  const syncHeaderState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  syncHeaderState();
+  window.addEventListener("scroll", syncHeaderState, { passive: true });
 }
 
 const revealItems = document.querySelectorAll("[data-reveal]");

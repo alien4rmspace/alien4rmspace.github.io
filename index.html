@@ -5,220 +5,615 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Damian Saelee builds memorable digital experiences with code, product thinking, and sharp visual direction."
+      content="Damian Saelee is a Computer Science student focused on GPU programming, machine learning systems, performance engineering, parallel computing, and systems-oriented software development."
     />
-    <meta name="theme-color" content="#fbf6ef" />
-    <title>Damian Saelee | Creative Developer</title>
+    <meta name="theme-color" content="#f3f7fb" />
+    <title>Damian Saelee | GPU Programming, ML, and Systems Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="page-shell">
-      <div class="backdrop" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <header class="site-header">
-        <a class="brand" href="#top" aria-label="Go to top of page">
+    <div class="site-shell">
+      <div class="ambient-grid" aria-hidden="true"></div>
+      <div class="ambient-orb ambient-orb-one" aria-hidden="true"></div>
+      <div class="ambient-orb ambient-orb-two" aria-hidden="true"></div>
+
+      <header class="site-header" data-site-header>
+        <a class="brand" href="#top" aria-label="Damian Saelee home">
           <span class="brand-mark">DS</span>
-          <span class="brand-copy">damiansaelee.com</span>
+          <span class="brand-text">
+            <span class="brand-name">Damian Saelee</span>
+            <span class="brand-role">Computer Science Student</span>
+          </span>
         </a>
 
         <nav class="site-nav" aria-label="Primary">
           <a href="#about">About</a>
-          <a href="#focus">Approach</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#resume">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
-      <main id="top">
-        <section class="hero" data-reveal>
-          <div class="hero-copy">
-            <p class="eyebrow">Creative developer / frontend engineer</p>
-            <h1>
-              Building digital work that feels
-              <span>clear, bold, and human.</span>
-            </h1>
+      <main id="main-content" class="site-main">
+        <section class="hero-section" id="top">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Open to internships and entry-level engineering roles</p>
+            <h1>Damian Saelee</h1>
+            <p class="hero-headline">
+              Computer Science Student | GPU Programming | Machine Learning |
+              Performance Engineering
+            </p>
             <p class="hero-text">
-              Damian Saelee builds fast, expressive web experiences and
-              thoughtful digital products with a blend of engineering rigor,
-              visual taste, and practical execution.
+              I build performance-oriented software and technical projects with
+              a strong emphasis on CUDA, PyTorch, multiplayer systems, and
+              profiling. My work is driven by implementation details,
+              measurement, and practical results rather than vague optimization
+              claims.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Start a conversation</a>
+              <a class="button button-primary" href="#projects">Projects</a>
+              <a class="button button-secondary" href="resume.html">Resume</a>
+              <!-- TODO: Confirm this is the GitHub profile you want linked from the homepage. -->
               <a
                 class="button button-secondary"
                 href="https://github.com/alien4rmspace"
                 target="_blank"
                 rel="noreferrer"
               >
-                View GitHub</a
-              >
+                GitHub
+              </a>
+              <a class="button button-secondary" href="#contact">Contact</a>
             </div>
 
-            <ul class="hero-points" aria-label="Highlights">
-              <li>Responsive by default</li>
-              <li>Fast static hosting on GitHub Pages</li>
-              <li>Easy to expand into a full portfolio later</li>
+            <ul class="hero-chips" aria-label="Quick highlights">
+              <li>370x GPU speedup validated with profiling</li>
+              <li>200s to 66s ML training pipeline reduction</li>
+              <li>15s to 8s inference optimization</li>
+              <li>Unity multiplayer and server-authoritative systems</li>
             </ul>
           </div>
 
-          <div class="hero-panel">
-            <div class="panel-card panel-card-large">
-              <p class="panel-label">Current direction</p>
-              <p class="panel-title">Design-led engineering for modern web experiences.</p>
+          <aside class="hero-panel" data-reveal>
+            <div class="hero-panel-card hero-panel-card-primary">
+              <p class="panel-label">Current focus</p>
+              <p class="panel-title">
+                GPU acceleration, ML systems, and performance-focused software
+                engineering.
+              </p>
               <p class="panel-body">
-                From polished landing pages to interactive product work, the
-                goal stays the same: ship something sharp, reliable, and easy to
-                understand.
+                I am most interested in internships and early-career roles where
+                I can work on systems that need to be measured, profiled, and
+                improved for real throughput or scalability gains.
               </p>
             </div>
 
-            <div class="panel-grid">
-              <div class="panel-card">
-                <p class="panel-label">Strengths</p>
-                <p class="metric">Frontend</p>
-                <p class="panel-body">Interfaces with personality and structure.</p>
+            <div class="hero-panel-grid">
+              <div class="hero-panel-card">
+                <p class="panel-label">Best fit roles</p>
+                <p class="metric-copy">
+                  SWE, systems software, ML infrastructure, performance
+                  engineering
+                </p>
               </div>
 
-              <div class="panel-card">
-                <p class="panel-label">Workflow</p>
-                <p class="metric">Systematic</p>
-                <p class="panel-body">Clean builds, clear thinking, repeatable execution.</p>
+              <div class="hero-panel-card">
+                <p class="panel-label">Core stack</p>
+                <p class="metric-copy">
+                  C++, Python, C#, CUDA, PyTorch, Unity, profiling tools
+                </p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section class="ticker" aria-label="Areas of work">
-          <div class="ticker-track">
-            <span>Frontend Engineering</span>
-            <span>Creative Development</span>
-            <span>UI Systems</span>
-            <span>Prototypes</span>
-            <span>Automation</span>
-            <span>Frontend Engineering</span>
-            <span>Creative Development</span>
-            <span>UI Systems</span>
-            <span>Prototypes</span>
-            <span>Automation</span>
-          </div>
+          </aside>
         </section>
 
         <section class="section about-section" id="about" data-reveal>
-          <div class="section-heading">
+          <div class="section-intro">
             <p class="eyebrow">About</p>
-            <h2>Technical range with a strong point of view.</h2>
+            <h2>Technical, hands-on, and metrics-driven.</h2>
+            <p class="section-text">
+              I am a Computer Science student who enjoys building
+              performance-oriented software across GPU computing, machine
+              learning systems, multiplayer game architecture, and
+              systems-oriented development. I am especially interested in work
+              that involves profiling, identifying bottlenecks, and improving
+              throughput instead of stopping once something merely runs.
+            </p>
           </div>
 
-          <div class="about-layout">
-            <p class="section-copy">
-              I like work that lives at the intersection of clean
-              implementation and memorable presentation. Whether a project
-              starts as a blank page, a prototype, or a product idea, I focus
-              on clarity, responsiveness, and momentum.
-            </p>
+          <div class="about-grid">
+            <article class="about-card">
+              <p class="about-card-title">What I like working on</p>
+              <p>
+                GPU acceleration, ML training and inference pipelines,
+                systems-level optimization, multiplayer architecture, and
+                software that benefits from careful measurement.
+              </p>
+            </article>
 
-            <div class="feature-stack">
-              <article class="feature-card">
-                <p class="feature-title">Frontend systems</p>
-                <p>
-                  Interfaces that feel polished on the surface and dependable
-                  underneath.
-                </p>
-              </article>
+            <article class="about-card">
+              <p class="about-card-title">How I approach engineering</p>
+              <p>
+                I profile first, reason about the bottleneck, implement a
+                targeted change, and validate the result with timing data or
+                traces.
+              </p>
+            </article>
 
-              <article class="feature-card">
-                <p class="feature-title">Product thinking</p>
-                <p>
-                  Decisions grounded in usability, hierarchy, and what actually
-                  helps people move through a page.
-                </p>
-              </article>
-
-              <article class="feature-card">
-                <p class="feature-title">Creative execution</p>
-                <p>
-                  Visual direction that gives a build presence without getting
-                  in the way of performance or clarity.
-                </p>
-              </article>
-            </div>
+            <article class="about-card">
+              <p class="about-card-title">Tools I am comfortable with</p>
+              <p>
+                C++, Python, C#, CUDA, PyTorch, Unity, NVIDIA Nsight Systems,
+                NVTX, Docker, CMake, Git, and supporting ML/data tooling.
+              </p>
+            </article>
           </div>
         </section>
 
-        <section class="section focus-section" id="focus" data-reveal>
-          <div class="section-heading">
-            <p class="eyebrow">Approach</p>
-            <h2>What I bring to a build.</h2>
+        <section class="section projects-section" id="projects">
+          <div class="section-intro section-intro-inverse" data-reveal>
+            <p class="eyebrow">Projects</p>
+            <h2>Projects built around implementation details and measurable results.</h2>
+            <p class="section-text">
+              These are the projects I want recruiters and engineering teams to
+              look at first. Each one highlights what I built, what technical
+              problem I solved, and what result I achieved.
+            </p>
           </div>
 
-          <div class="focus-grid">
-            <article class="focus-card">
-              <p class="focus-number">01</p>
-              <h3>Interfaces that feel alive</h3>
-              <p>
-                Responsive layouts, strong pacing, and details that make the
-                experience feel considered from top to bottom.
-              </p>
+          <div class="project-stack">
+            <article class="project-card project-card-cuda" data-reveal>
+              <div class="project-topbar">
+                <div>
+                  <p class="project-index">Project 01</p>
+                  <h3>CUDA-Accelerated Mandelbrot Renderer</h3>
+                  <p class="project-summary">
+                    Parallel fractal rendering in C++ and CUDA, profiled with
+                    NVIDIA tooling to validate a real speedup over a CPU
+                    baseline.
+                  </p>
+                </div>
+
+                <div class="project-actions">
+                  <!-- TODO: Replace with the repository URL for this project. -->
+                  <a
+                    class="button button-ghost"
+                    href="https://github.com/alien4rmspace"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <!-- TODO: Replace this placeholder with a demo, write-up, or benchmark page. -->
+                  <button class="button button-outline" type="button" disabled>
+                    Details / Demo
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-grid">
+                <div class="project-copy">
+                  <p>
+                    Built a Mandelbrot renderer in C++ with CUDA acceleration,
+                    distributing per-pixel fractal work across the GPU to
+                    increase rendering throughput substantially compared to a CPU
+                    implementation.
+                  </p>
+                  <p>
+                    Instrumented CPU and GPU execution with NVIDIA Nsight
+                    Systems and NVTX markers to separate phases of execution,
+                    inspect bottlenecks, and make performance claims based on
+                    traces rather than guesswork.
+                  </p>
+                  <p>
+                    The result was about a 370x speedup, with example frame
+                    timings dropping from about 374 ms on CPU to about 1.0 ms on
+                    GPU. The project emphasizes parallel work distribution,
+                    throughput, deep-zoom rendering, and performance-oriented
+                    design backed by measurement.
+                  </p>
+
+                  <ul class="project-points">
+                    <li>Mapped pixels in parallel on the GPU for fractal generation</li>
+                    <li>Used NVTX markers to make traces easier to interpret</li>
+                    <li>Focused on measurable speedup instead of vague optimization claims</li>
+                  </ul>
+
+                  <ul class="tag-list" aria-label="CUDA Mandelbrot stack">
+                    <li>C++</li>
+                    <li>CUDA</li>
+                    <li>SFML</li>
+                    <li>NVIDIA Nsight Systems</li>
+                    <li>NVTX</li>
+                  </ul>
+                </div>
+
+                <aside class="project-sidebar">
+                  <div class="stat-card">
+                    <span class="stat-value">370x</span>
+                    <span class="stat-label">Speedup vs. CPU baseline</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">374 ms</span>
+                    <span class="stat-label">Example CPU frame time</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">1.0 ms</span>
+                    <span class="stat-label">Example GPU frame time</span>
+                  </div>
+                </aside>
+              </div>
+
+              <div class="project-media">
+                <!-- TODO: Replace this placeholder with a Mandelbrot render, benchmark chart, or Nsight timeline image. -->
+                <div class="media-placeholder media-placeholder-cuda">
+                  <div class="media-placeholder-header">
+                    <span>Suggested asset</span>
+                    <span>Profiler trace or rendered output</span>
+                  </div>
+                  <div class="media-placeholder-body">
+                    <div class="media-block media-block-fractal"></div>
+                    <div class="media-metrics">
+                      <span>CPU render path</span>
+                      <span>GPU kernel launch</span>
+                      <span>NVTX-instrumented regions</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </article>
 
-            <article class="focus-card">
-              <p class="focus-number">02</p>
-              <h3>Clear collaboration</h3>
-              <p>
-                Communication, iteration, and clean structure so ideas move from
-                rough direction to something shippable quickly.
-              </p>
+            <article class="project-card project-card-ml" data-reveal>
+              <div class="project-topbar">
+                <div>
+                  <p class="project-index">Project 02</p>
+                  <h3>GPU-Accelerated Pokemon Card Classifier</h3>
+                  <p class="project-summary">
+                    End-to-end image classification pipeline tuned for training
+                    and inference throughput, not just model accuracy.
+                  </p>
+                </div>
+
+                <div class="project-actions">
+                  <!-- TODO: Replace with the repository URL for this project. -->
+                  <a
+                    class="button button-ghost"
+                    href="https://github.com/alien4rmspace"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <!-- TODO: Replace this placeholder with a notebook, report, or demo page. -->
+                  <button class="button button-outline" type="button" disabled>
+                    Details / Demo
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-grid">
+                <div class="project-copy">
+                  <p>
+                    Built a Pokemon card recognition pipeline in Python using
+                    PyTorch and CUDA, fine-tuning a ResNet-18 model on a custom
+                    dataset with automated data collection and preprocessing.
+                  </p>
+                  <p>
+                    Profiled the training pipeline with NVIDIA Nsight Systems
+                    and NVTX to understand where time was going across model
+                    execution and data loading, then tuned the input pipeline and
+                    DataLoader settings to reduce bottlenecks.
+                  </p>
+                  <p>
+                    Reduced 5-epoch training time from about 200 seconds to
+                    about 66 seconds and reduced inference time from about 15
+                    seconds to about 8 seconds. The project shows machine
+                    learning systems thinking, GPU-aware profiling, and a focus
+                    on end-to-end throughput.
+                  </p>
+
+                  <ul class="project-points">
+                    <li>Fine-tuned ResNet-18 on a custom image classification dataset</li>
+                    <li>Explored DataLoader and num_workers tradeoffs for throughput</li>
+                    <li>Treated the ML pipeline as a performance system, not just a model</li>
+                  </ul>
+
+                  <ul class="tag-list" aria-label="Pokemon classifier stack">
+                    <li>Python</li>
+                    <li>PyTorch</li>
+                    <li>CUDA</li>
+                    <li>scikit-learn</li>
+                    <li>NumPy</li>
+                    <li>pandas</li>
+                    <li>Matplotlib</li>
+                    <li>NVIDIA Nsight Systems</li>
+                    <li>NVTX</li>
+                  </ul>
+                </div>
+
+                <aside class="project-sidebar">
+                  <div class="stat-card">
+                    <span class="stat-value">200s to 66s</span>
+                    <span class="stat-label">5-epoch training time</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">15s to 8s</span>
+                    <span class="stat-label">Inference time reduction</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">Profiled</span>
+                    <span class="stat-label">Nsight Systems + NVTX + DataLoader tuning</span>
+                  </div>
+                </aside>
+              </div>
+
+              <div class="project-media">
+                <!-- TODO: Replace this placeholder with a confusion matrix, throughput chart, or Nsight timeline screenshot. -->
+                <div class="media-placeholder media-placeholder-ml">
+                  <div class="media-placeholder-header">
+                    <span>Suggested asset</span>
+                    <span>Training throughput chart or profiler view</span>
+                  </div>
+                  <div class="media-placeholder-body">
+                    <div class="media-chart">
+                      <span class="chart-bar chart-bar-short"></span>
+                      <span class="chart-bar chart-bar-medium"></span>
+                      <span class="chart-bar chart-bar-tall"></span>
+                      <span class="chart-bar chart-bar-mid"></span>
+                    </div>
+                    <div class="media-metrics">
+                      <span>Input pipeline</span>
+                      <span>num_workers tuning</span>
+                      <span>GPU training + inference</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </article>
 
-            <article class="focus-card">
-              <p class="focus-number">03</p>
-              <h3>Room to scale</h3>
-              <p>
-                A foundation that works as a landing page now and can expand
-                cleanly into a larger portfolio later.
-              </p>
+            <article class="project-card project-card-systems" data-reveal>
+              <div class="project-topbar">
+                <div>
+                  <p class="project-index">Project 03</p>
+                  <h3>Multiplayer Zombie RTS / Survival Game</h3>
+                  <p class="project-summary">
+                    Unity multiplayer project centered on server-authoritative
+                    logic, synchronized gameplay systems, and architecture that
+                    can scale beyond a local prototype.
+                  </p>
+                </div>
+
+                <div class="project-actions">
+                  <!-- TODO: Replace with the repository URL for this project. -->
+                  <a
+                    class="button button-ghost"
+                    href="https://github.com/alien4rmspace"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <!-- TODO: Replace this placeholder with gameplay footage, architecture notes, or a deployment write-up. -->
+                  <button class="button button-outline" type="button" disabled>
+                    Details / Demo
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-grid">
+                <div class="project-copy">
+                  <p>
+                    Built a multiplayer zombie survival and RTS-style game in
+                    Unity using Netcode for GameObjects, with a focus on
+                    server-authoritative state, networked interactions, and the
+                    complexity of syncing units, zombies, and player actions.
+                  </p>
+                  <p>
+                    Designed gameplay systems with scalability and performance in
+                    mind, thinking early about state ownership, synchronization,
+                    and how the project could evolve from gameplay code into a
+                    more production-oriented multiplayer stack.
+                  </p>
+                  <p>
+                    Explored supporting infrastructure using Dockerized server
+                    concepts alongside PlayFab and Azure Functions, showing a
+                    willingness to work across gameplay, backend, and deployment
+                    concerns instead of treating networking as an afterthought.
+                  </p>
+
+                  <ul class="project-points">
+                    <li>Focused on multiplayer architecture and server authority</li>
+                    <li>Worked on syncing units, zombies, and multiplayer interactions</li>
+                    <li>Extended the project into backend and deployment-adjacent concerns</li>
+                  </ul>
+
+                  <ul class="tag-list" aria-label="Multiplayer game stack">
+                    <li>Unity</li>
+                    <li>C#</li>
+                    <li>Netcode for GameObjects</li>
+                    <li>Docker</li>
+                    <li>PlayFab</li>
+                    <li>Azure Functions</li>
+                  </ul>
+                </div>
+
+                <aside class="project-sidebar">
+                  <div class="stat-card">
+                    <span class="stat-value">Authoritative</span>
+                    <span class="stat-label">Server-owned gameplay state</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">Networked</span>
+                    <span class="stat-label">Units, zombies, and interactions synced</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-value">Cross-stack</span>
+                    <span class="stat-label">Gameplay, backend, and deployment exploration</span>
+                  </div>
+                </aside>
+              </div>
+
+              <div class="project-media">
+                <!-- TODO: Replace this placeholder with gameplay screenshots, architecture diagrams, or deployment notes. -->
+                <div class="media-placeholder media-placeholder-systems">
+                  <div class="media-placeholder-header">
+                    <span>Suggested asset</span>
+                    <span>Gameplay view or multiplayer architecture diagram</span>
+                  </div>
+                  <div class="media-placeholder-body">
+                    <div class="network-diagram">
+                      <span>Client</span>
+                      <span>Authoritative server</span>
+                      <span>Cloud services</span>
+                    </div>
+                    <div class="media-metrics">
+                      <span>Netcode sync</span>
+                      <span>PlayFab + Azure support services</span>
+                      <span>Dockerized server concepts</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </article>
+          </div>
+        </section>
+
+        <section class="section skills-section" id="skills" data-reveal>
+          <div class="section-intro">
+            <p class="eyebrow">Skills</p>
+            <h2>Tools and technologies I use to build and optimize.</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <p class="skill-card-title">Languages</p>
+              <ul class="tag-list tag-list-dark">
+                <li>C++</li>
+                <li>C#</li>
+                <li>Python</li>
+                <li>Java</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <p class="skill-card-title">GPU / Performance</p>
+              <ul class="tag-list tag-list-dark">
+                <li>CUDA</li>
+                <li>NVIDIA Nsight Systems</li>
+                <li>NVTX</li>
+                <li>Profiling</li>
+                <li>Parallel Computing</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <p class="skill-card-title">ML / Data</p>
+              <ul class="tag-list tag-list-dark">
+                <li>PyTorch</li>
+                <li>scikit-learn</li>
+                <li>NumPy</li>
+                <li>pandas</li>
+                <li>Matplotlib</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <p class="skill-card-title">Game / Systems</p>
+              <ul class="tag-list tag-list-dark">
+                <li>Unity</li>
+                <li>Netcode for GameObjects</li>
+                <li>Multiplayer Systems</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <p class="skill-card-title">Tools</p>
+              <ul class="tag-list tag-list-dark">
+                <li>Git</li>
+                <li>Docker</li>
+                <li>CMake</li>
+                <li>GitHub Actions</li>
+                <li>Azure Functions</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section resume-section" id="resume" data-reveal>
+          <div class="resume-card">
+            <div>
+              <p class="eyebrow">Resume</p>
+              <h2>Resume with technical projects, tools, and performance-focused work.</h2>
+              <p class="section-text">
+                I keep my resume centered on technical project depth,
+                performance results, profiling work, and hands-on implementation.
+                The quick resume page below is ready for GitHub Pages now, and
+                you can later replace it with a PDF download when you are ready.
+              </p>
+            </div>
+
+            <div class="resume-actions">
+              <a class="button button-primary" href="resume.html">Open Resume Page</a>
+              <!-- TODO: Replace or add a direct PDF link when your final resume file is ready. -->
+              <button class="button button-secondary" type="button" disabled>
+                Resume PDF TODO
+              </button>
+            </div>
           </div>
         </section>
 
         <section class="section contact-section" id="contact" data-reveal>
-          <div class="contact-card">
-            <div>
-              <p class="eyebrow">Contact</p>
-              <h2>Open to internships, collaborations, and ambitious builds.</h2>
-              <p class="section-copy">
-                If you want someone who can move between design instinct and
-                implementation detail, this is a good place to start the
-                conversation.
-              </p>
-            </div>
+          <div class="section-intro">
+            <p class="eyebrow">Contact</p>
+            <h2>Make it easy for recruiters to reach the right links fast.</h2>
+            <p class="section-text">
+              Keep this section current before publishing. For recruiting use,
+              the most important items are your GitHub, LinkedIn, and a clean
+              email address.
+            </p>
+          </div>
 
-            <div class="contact-actions">
-              <a class="button button-primary" href="mailto:hello@damiansaelee.com"
-                >Email hello@damiansaelee.com</a
-              >
-              <a
-                class="button button-secondary"
-                href="https://github.com/alien4rmspace"
-                target="_blank"
-                rel="noreferrer"
-              >
-                github.com/alien4rmspace</a
-              >
-            </div>
+          <div class="contact-grid">
+            <a
+              class="contact-card"
+              href="https://github.com/alien4rmspace"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-label">GitHub</span>
+              <strong>github.com/alien4rmspace</strong>
+              <span>Code, repositories, and project history</span>
+            </a>
+
+            <!-- TODO: Replace this placeholder with your real LinkedIn profile URL. -->
+            <a class="contact-card" href="#">
+              <span class="contact-label">LinkedIn</span>
+              <strong>linkedin.com/in/your-link-here</strong>
+              <span>Professional profile and recruiting contact</span>
+            </a>
+
+            <!-- TODO: Replace this placeholder email with the address you want recruiters to use. -->
+            <a class="contact-card" href="mailto:damian@example.com">
+              <span class="contact-label">Email</span>
+              <strong>damian@example.com</strong>
+              <span>Best for interview requests and direct outreach</span>
+            </a>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>&copy; <span id="year"></span> Damian Saelee. Built for GitHub Pages.</p>
+        <p>&copy; <span id="year"></span> Damian Saelee. Built as a static GitHub Pages portfolio.</p>
       </footer>
     </div>
   </body>
