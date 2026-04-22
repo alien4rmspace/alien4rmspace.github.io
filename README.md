@@ -35,7 +35,7 @@ and JavaScript so it stays fast, lightweight, and easy to edit.
 1. Update GitHub, LinkedIn, email, and project repository links in `index.html`.
 2. Replace the project media placeholders with screenshots or charts stored in
    `assets/projects/`.
-3. Replace the resume placeholder flow with a real PDF or expand `resume.html`.
+3. Update `assets/resume/Damian-Saelee-Resume.pdf` whenever you refresh your resume.
 4. Re-read the project summaries and make sure they match your final wording.
 
 ## Deploying To GitHub Pages
@@ -51,12 +51,8 @@ and JavaScript so it stays fast, lightweight, and easy to edit.
 
 ## Customization Checklist
 
-- Replace the placeholder LinkedIn URL.
-- Replace the placeholder email address.
-- Replace each project GitHub link with the correct repository.
 - Add real demo/details links if you have videos, profiler screenshots, or
   write-ups.
 - Add screenshots, charts, or trace images for each project.
-- Decide whether `resume.html` stays as a public resume page or gets replaced
-  with a PDF download.
+- Decide whether `resume.html` stays as a public resume page alongside the PDF.
 - Review all metrics and wording one more time before publishing.
