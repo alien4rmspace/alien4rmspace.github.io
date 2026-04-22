@@ -204,7 +204,7 @@ select {
 .header-github {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.38rem;
   padding: 0.68rem 0.92rem;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -230,8 +230,8 @@ select {
 }
 
 .header-github svg {
-  width: 0.95rem;
-  height: 0.95rem;
+  width: 0.82rem;
+  height: 0.82rem;
 }
 
 .site-nav {
@@ -732,6 +732,74 @@ h2 {
   align-items: stretch;
 }
 
+.project-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-evidence-card {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.project-evidence-frame {
+  overflow: hidden;
+  border: 1px solid rgba(92, 75, 64, 0.13);
+  border-radius: var(--radius-md);
+  background: rgba(239, 228, 215, 0.74);
+}
+
+.project-evidence-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-evidence-caption {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(92, 75, 64, 0.13);
+  border-radius: var(--radius-md);
+  background: rgba(255, 252, 248, 0.78);
+}
+
+.project-evidence-caption strong {
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+.project-evidence-caption span:last-child {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.project-evidence-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.project-evidence-badge-baseline {
+  background: rgba(141, 68, 33, 0.12);
+  color: var(--accent-strong);
+}
+
+.project-evidence-badge-optimized {
+  background: rgba(64, 134, 98, 0.14);
+  color: #2f6d50;
+}
+
 .media-block,
 .media-chart,
 .network-diagram {
@@ -1012,6 +1080,10 @@ h2 {
     flex-direction: column;
   }
 
+  .project-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1083,6 +1155,11 @@ h2 {
   .header-github {
     padding: 0.62rem 0.8rem;
     font-size: 0.72rem;
+  }
+
+  .header-github svg {
+    width: 0.72rem;
+    height: 0.72rem;
   }
 }
 

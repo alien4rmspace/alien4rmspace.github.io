@@ -215,7 +215,7 @@
                   </a>
                   <a
                     class="button button-secondary"
-                    href="https://github.com/alien4rmspace/Mandelbrot-Set-CUDA/blob/main/README.md"
+                    href="https://github.com/alien4rmspace/Mandelbrot-Set-CUDA#readme"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -397,24 +397,41 @@
               </div>
 
               <div class="project-media">
-                <!-- TODO: Replace this placeholder with your Nsight Systems screenshots or the baseline-vs-optimized training chart from the repo README. -->
                 <div class="media-placeholder media-placeholder-ml">
                   <div class="media-placeholder-header">
-                    <span>Suggested asset</span>
-                    <span>Nsight timeline or baseline-vs-optimized training chart</span>
+                    <span>Profiler evidence</span>
+                    <span>Nsight Systems baseline vs optimized training runs</span>
                   </div>
-                  <div class="media-placeholder-body">
-                    <div class="media-chart">
-                      <span class="chart-bar chart-bar-short"></span>
-                      <span class="chart-bar chart-bar-medium"></span>
-                      <span class="chart-bar chart-bar-tall"></span>
-                      <span class="chart-bar chart-bar-mid"></span>
-                    </div>
-                    <div class="media-metrics">
-                      <span>Async dataset collection</span>
-                      <span>Label normalization + DataLoader tuning</span>
-                      <span>GPU training throughput profiling</span>
-                    </div>
+                  <div class="project-evidence-grid">
+                    <figure class="project-evidence-card">
+                      <div class="project-evidence-frame">
+                        <img
+                          src="assets/projects/pokemon-card-classifier-nsight-baseline.png"
+                          alt="Nsight Systems timeline for the baseline Pokemon card classifier training run showing a total runtime of about 199.871 seconds."
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption class="project-evidence-caption">
+                        <span class="project-evidence-badge project-evidence-badge-baseline">Baseline</span>
+                        <strong>5-epoch training run: 199.871 s</strong>
+                        <span>Original pipeline before DataLoader and transfer tuning.</span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="project-evidence-card">
+                      <div class="project-evidence-frame">
+                        <img
+                          src="assets/projects/pokemon-card-classifier-nsight-optimized.png"
+                          alt="Nsight Systems timeline for the optimized Pokemon card classifier training run showing a total runtime of about 66.714 seconds."
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption class="project-evidence-caption">
+                        <span class="project-evidence-badge project-evidence-badge-optimized">Optimized</span>
+                        <strong>5-epoch training run: 66.714 s</strong>
+                        <span>Tuned workers, pinned memory, non-blocking transfers, and prefetching.</span>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>
