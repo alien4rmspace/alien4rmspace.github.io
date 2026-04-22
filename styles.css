@@ -812,6 +812,38 @@ h2 {
   box-shadow: 0 28px 60px rgba(60, 36, 26, 0.14);
 }
 
+.contact-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(181, 137, 111, 0.2);
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 1.18rem;
+  height: 1.18rem;
+}
+
+.contact-icon-github {
+  background: rgba(58, 36, 28, 0.08);
+  color: var(--surface-strong);
+}
+
+.contact-icon-linkedin {
+  background: rgba(217, 130, 79, 0.14);
+  color: var(--accent-strong);
+}
+
 .contact-card strong {
   font-size: 1.05rem;
   line-height: 1.45;
