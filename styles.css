@@ -417,12 +417,40 @@ h2 {
 }
 
 .hero-chips li {
+  display: flex;
+}
+
+.hero-chip-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   padding: 0.75rem 0.95rem;
   border: 1px solid rgba(23, 20, 17, 0.08);
   border-radius: 999px;
   background: rgba(255, 249, 243, 0.74);
-  font-size: 0.92rem;
   color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.hero-chip-link:hover,
+.hero-chip-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(141, 68, 33, 0.2);
+  background: rgba(255, 249, 243, 0.96);
+  box-shadow: 0 12px 30px rgba(35, 27, 22, 0.08);
+}
+
+.hero-chip-link:focus-visible {
+  outline: 3px solid rgba(199, 101, 43, 0.26);
+  outline-offset: 3px;
 }
 
 .hero-panel {

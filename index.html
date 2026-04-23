@@ -93,25 +93,33 @@
               <a class="button button-secondary" href="#contact">Contact</a>
             </div>
 
-            <ul class="hero-chips" aria-label="Quick highlights">
-              <li>370x GPU speedup</li>
-              <li>200s -&gt; 66s training runtime</li>
-              <li>15s -&gt; 8s inference</li>
-              <li>Server-authoritative multiplayer systems</li>
+            <ul class="hero-chips" aria-label="Project shortcuts">
+              <li>
+                <a class="hero-chip-link" href="#project-mandelbrot">View CUDA Mandelbrot project</a>
+              </li>
+              <li>
+                <a class="hero-chip-link" href="#project-pokemon">View Pok&eacute;mon classifier training optimization</a>
+              </li>
+              <li>
+                <a class="hero-chip-link" href="#project-pokemon">View Pok&eacute;mon classifier inference results</a>
+              </li>
+              <li>
+                <a class="hero-chip-link" href="#project-multiplayer">View multiplayer systems project</a>
+              </li>
             </ul>
           </div>
 
           <aside class="hero-panel" data-reveal>
             <div class="hero-panel-card hero-panel-card-primary">
-              <p class="panel-label">Current focus</p>
+              <p class="panel-label">Technical focus</p>
               <p class="panel-title">
                 GPU acceleration, ML systems, and performance-focused software
                 engineering.
               </p>
               <p class="panel-body">
-                I am most interested in internships and early-career roles where
-                I can work on systems that need to be measured, profiled, and
-                improved for real throughput or scalability gains.
+                I build systems that benefit from profiling, GPU acceleration,
+                and targeted optimization, with an emphasis on throughput,
+                bottleneck analysis, and scalable architecture.
               </p>
             </div>
 
@@ -119,8 +127,7 @@
               <div class="hero-panel-card">
                 <p class="panel-label">Best fit roles</p>
                 <p class="metric-copy">
-                  SWE, systems software, ML infrastructure, performance
-                  engineering
+                  Systems software, ML infrastructure, performance engineering
                 </p>
               </div>
 
@@ -159,16 +166,16 @@
             </article>
 
             <article class="about-card">
-              <p class="about-card-title">How I approach engineering</p>
+              <p class="about-card-title">Engineering approach</p>
               <p>
-                I profile first, reason about the bottleneck, implement a
-                targeted change, and validate the result with timing data or
-                traces.
+                I build systems with correctness and clarity first, then refine
+                them through profiling, bottleneck analysis, and data-driven
+                optimization.
               </p>
             </article>
 
             <article class="about-card">
-              <p class="about-card-title">Tools I am comfortable with</p>
+              <p class="about-card-title">Core technical toolkit</p>
               <p>
                 C++, Python, C#, CUDA, PyTorch, Unity, NVIDIA Nsight Systems,
                 NVTX, Docker, Git, and supporting ML/data tooling.
@@ -188,7 +195,7 @@
           </div>
 
           <div class="project-stack">
-            <article class="project-card project-card-cuda" data-reveal>
+            <article class="project-card project-card-cuda" id="project-mandelbrot" data-reveal>
               <div class="project-topbar">
                 <div>
                   <p class="project-index">Project 01</p>
@@ -337,7 +344,7 @@
               </div>
             </article>
 
-            <article class="project-card project-card-ml" data-reveal>
+            <article class="project-card project-card-ml" id="project-pokemon" data-reveal>
               <div class="project-topbar">
                 <div>
                   <p class="project-index">Project 02</p>
@@ -473,7 +480,7 @@
               </div>
             </article>
 
-            <article class="project-card project-card-systems" data-reveal>
+            <article class="project-card project-card-systems" id="project-multiplayer" data-reveal>
               <div class="project-topbar">
                 <div>
                   <p class="project-index">Project 03</p>
@@ -597,58 +604,62 @@
         <section class="section skills-section" id="skills" data-reveal>
           <div class="section-intro">
             <p class="eyebrow">Skills</p>
-            <h2>Tools and technologies I use to build and optimize.</h2>
+            <h2>Core tools for GPU, ML systems, and performance work.</h2>
           </div>
 
           <div class="skills-grid">
             <article class="skill-card">
-              <p class="skill-card-title">Languages</p>
+              <p class="skill-card-title">Primary stack</p>
               <ul class="tag-list tag-list-dark">
                 <li>C++</li>
-                <li>C#</li>
                 <li>Python</li>
-                <li>Java</li>
+                <li>CUDA</li>
+                <li>PyTorch</li>
+                <li>NVIDIA Nsight Systems</li>
+                <li>NVTX</li>
               </ul>
             </article>
 
             <article class="skill-card">
-              <p class="skill-card-title">GPU / Performance</p>
+              <p class="skill-card-title">Systems / Performance</p>
               <ul class="tag-list tag-list-dark">
-                <li>CUDA</li>
-                <li>NVIDIA Nsight Systems</li>
-                <li>NVTX</li>
+                <li>C#</li>
                 <li>Profiling</li>
                 <li>Parallel Computing</li>
+                <li>Throughput Optimization</li>
+                <li>Bottleneck Analysis</li>
               </ul>
             </article>
 
             <article class="skill-card">
               <p class="skill-card-title">ML / Data</p>
               <ul class="tag-list tag-list-dark">
-                <li>PyTorch</li>
                 <li>scikit-learn</li>
                 <li>NumPy</li>
                 <li>pandas</li>
-                <li>Matplotlib</li>
+                <li>Data Pipelines</li>
               </ul>
             </article>
 
             <article class="skill-card">
-              <p class="skill-card-title">Game / Systems</p>
+              <p class="skill-card-title">Multiplayer / Runtime</p>
               <ul class="tag-list tag-list-dark">
                 <li>Unity</li>
                 <li>Netcode for GameObjects</li>
-                <li>Multiplayer Systems</li>
+                <li>Server-Authoritative Systems</li>
+                <li>Multiplayer Networking</li>
               </ul>
             </article>
 
             <article class="skill-card">
-              <p class="skill-card-title">Tools</p>
+              <p class="skill-card-title">Supporting tools</p>
               <ul class="tag-list tag-list-dark">
                 <li>Git</li>
                 <li>Docker</li>
                 <li>GitHub Actions</li>
                 <li>Azure Functions</li>
+                <li>Java</li>
+                <li>Matplotlib</li>
               </ul>
             </article>
           </div>
