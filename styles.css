@@ -1416,12 +1416,21 @@ body.landing-page .landing-trace-live {
 }
 
 body.landing-page .landing-trace-cuda,
+body.landing-page .landing-trace-pokemon,
 body.landing-page .landing-trace-multiplayer {
   stroke: #f0934d;
 }
 
 body.landing-page .landing-trace-pokemon {
   animation-delay: -0.9s;
+}
+
+body.landing-page .landing-trace-pokemon-connector {
+  stroke-dasharray: 24 18;
+  stroke-width: 7;
+  animation-duration: 2.1s;
+  animation-delay: -0.35s;
+  opacity: 0.98;
 }
 
 body.landing-page .landing-trace-multiplayer {
