@@ -1363,7 +1363,7 @@ body.landing-page .projects-section .section-intro-inverse .section-text {
 body.landing-page .project-circuit-router {
   position: relative;
   z-index: 2;
-  min-height: 24rem;
+  min-height: 28rem;
   margin: 2rem 0 2.4rem;
   border: 1px solid rgba(255, 247, 237, 0.14);
   background:
@@ -1390,6 +1390,8 @@ body.landing-page .project-circuit-traces {
   inset: 0;
   width: 100%;
   height: 100%;
+  overflow: visible;
+  pointer-events: none;
 }
 
 body.landing-page .landing-trace {
@@ -1398,43 +1400,33 @@ body.landing-page .landing-trace {
   stroke-linejoin: round;
 }
 
-body.landing-page .landing-trace-backbone {
+body.landing-page .landing-trace-base {
   stroke: rgba(255, 247, 237, 0.16);
-  stroke-width: 10;
+  stroke-width: 11;
 }
 
-body.landing-page .landing-trace-live {
+body.landing-page .landing-trace-flow {
   filter: url(#landingTraceGlow);
-  stroke: var(--accent-soft);
-  stroke-dasharray: 18 30;
-  stroke-width: 6;
-  animation: landingRouteElectricity 2.8s linear infinite;
-  opacity: 0.9;
-  transition:
-    opacity 180ms ease,
-    stroke-width 180ms ease;
-}
-
-body.landing-page .landing-trace-cuda,
-body.landing-page .landing-trace-pokemon,
-body.landing-page .landing-trace-multiplayer {
   stroke: #f0934d;
-}
-
-body.landing-page .landing-trace-pokemon {
-  animation-delay: -0.9s;
-}
-
-body.landing-page .landing-trace-pokemon-connector {
-  stroke-dasharray: 24 18;
+  stroke-dasharray: 20 28;
   stroke-width: 7;
-  animation-duration: 2.1s;
-  animation-delay: -0.35s;
-  opacity: 0.98;
+  animation: landingRouteElectricity 2s linear infinite;
+  opacity: 0.95;
 }
 
-body.landing-page .landing-trace-multiplayer {
-  animation-delay: -1.7s;
+body.landing-page .landing-trace-flow-pokemon {
+  stroke: #ffb071;
+  stroke-width: 8.5;
+  animation-duration: 1.65s;
+  animation-delay: -0.55s;
+}
+
+body.landing-page .landing-trace-flow-cuda {
+  animation-delay: -1.25s;
+}
+
+body.landing-page .landing-trace-flow-multiplayer {
+  animation-delay: -0.95s;
 }
 
 body.landing-page .landing-solder {
@@ -1448,15 +1440,19 @@ body.landing-page .landing-solder-core {
   fill: var(--accent);
 }
 
+body.landing-page .landing-solder-junction {
+  fill: var(--accent-soft);
+}
+
 body.landing-page .project-router-chip {
   position: absolute;
   top: 50%;
   left: 2rem;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   gap: 0.35rem;
-  width: 16rem;
-  min-height: 11rem;
+  width: 17rem;
+  min-height: 11.25rem;
   padding: 1.4rem;
   place-content: center;
   border: 1px solid rgba(255, 247, 237, 0.18);
@@ -1485,10 +1481,10 @@ body.landing-page .project-router-chip strong {
 
 body.landing-page .project-circuit-links {
   position: absolute;
-  inset: 2rem 1.6rem 2rem auto;
-  z-index: 2;
+  inset: 2rem 2rem 2rem auto;
+  z-index: 3;
   display: grid;
-  width: min(38rem, calc(100% - 24rem));
+  width: min(38rem, calc(100% - 28rem));
   gap: 1rem;
 }
 
@@ -1498,9 +1494,8 @@ body.landing-page .project-circuit-node {
   display: grid;
   align-content: center;
   gap: 0.38rem;
-  overflow: hidden;
   min-height: 5.9rem;
-  padding: 1rem 1.1rem;
+  padding: 1rem 1.1rem 1rem 1.35rem;
   border: 1px solid rgba(255, 247, 237, 0.16);
   background: rgba(23, 20, 17, 0.76);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
@@ -1515,41 +1510,24 @@ body.landing-page .project-circuit-node {
 body.landing-page .project-circuit-node::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: -42%;
-  z-index: 0;
-  width: 42%;
-  height: 0.35rem;
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 4px;
   pointer-events: none;
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(240, 147, 77, 0.18) 18%,
-    rgba(240, 147, 77, 0.95) 45%,
-    rgba(85, 214, 194, 0.98) 60%,
-    rgba(240, 147, 77, 0.2) 82%,
-    transparent 100%
+    180deg,
+    rgba(85, 214, 194, 0.92),
+    rgba(240, 147, 77, 0.96),
+    rgba(85, 214, 194, 0.78)
   );
-  border-radius: 999px;
   box-shadow:
-    0 0 18px rgba(240, 147, 77, 0.42),
-    0 0 30px rgba(85, 214, 194, 0.24);
-  opacity: 0.9;
-  transform: translate(-120%, -50%);
-  animation: projectNodeElectricity 2.4s linear infinite;
-}
-
-body.landing-page .project-circuit-node-pokemon::before {
-  animation-delay: -0.8s;
-}
-
-body.landing-page .project-circuit-node-multiplayer::before {
-  animation-delay: -1.55s;
+    0 0 18px rgba(85, 214, 194, 0.35),
+    0 0 26px rgba(240, 147, 77, 0.25);
 }
 
 body.landing-page .project-circuit-node > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 body.landing-page .project-circuit-node strong {
@@ -1575,25 +1553,6 @@ body.landing-page .project-circuit-node:focus-visible {
 body.landing-page .project-circuit-node:focus-visible {
   outline: 2px solid rgba(85, 214, 194, 0.86);
   outline-offset: 4px;
-}
-
-body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:hover) .landing-trace-live:not(.landing-trace-cuda),
-body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:focus-visible) .landing-trace-live:not(.landing-trace-cuda),
-body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:hover) .landing-trace-live:not(.landing-trace-pokemon),
-body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:focus-visible) .landing-trace-live:not(.landing-trace-pokemon),
-body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:hover) .landing-trace-live:not(.landing-trace-multiplayer),
-body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:focus-visible) .landing-trace-live:not(.landing-trace-multiplayer) {
-  opacity: 0.22;
-}
-
-body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:hover) .landing-trace-cuda,
-body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:focus-visible) .landing-trace-cuda,
-body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:hover) .landing-trace-pokemon,
-body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:focus-visible) .landing-trace-pokemon,
-body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:hover) .landing-trace-multiplayer,
-body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:focus-visible) .landing-trace-multiplayer {
-  opacity: 1;
-  stroke-width: 9;
 }
 
 body.landing-page .project-stack {
@@ -1778,16 +1737,6 @@ body.landing-page .project-lightbox-body {
 
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes projectNodeElectricity {
-  from {
-    transform: translate(-120%, -50%);
-  }
-
-  to {
-    transform: translate(360%, -50%);
   }
 }
 
@@ -2064,6 +2013,9 @@ body.resume-page .resume-viewer-frame {
   body.landing-page .project-circuit-node:not(:last-child)::after {
     content: "";
     position: absolute;
+    top: auto;
+    right: auto;
+    z-index: 0;
     left: 1.25rem;
     bottom: -1rem;
     width: 3px;
@@ -2077,6 +2029,15 @@ body.resume-page .resume-viewer-frame {
         rgba(85, 214, 194, 0.16)
       );
     box-shadow: 0 0 18px rgba(85, 214, 194, 0.38);
+    opacity: 1;
+    transform: none;
+    background-size: auto;
+    animation: none;
+    transition: none;
+  }
+
+  body.landing-page .project-circuit-node:last-child::after {
+    content: none;
   }
 }
 
