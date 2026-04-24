@@ -1207,6 +1207,680 @@ body.lightbox-open {
   transform: translateY(0);
 }
 
+body.landing-page {
+  --bg: #171411;
+  --bg-soft: rgba(23, 20, 17, 0.78);
+  --surface: #211a16;
+  --surface-muted: #2a211c;
+  --surface-strong: #171411;
+  --surface-strong-alt: #fff7ed;
+  --text: #fff7ed;
+  --text-soft: #d8c7b6;
+  --text-inverse: #fff7ed;
+  --line: rgba(255, 247, 237, 0.14);
+  --line-strong: rgba(255, 247, 237, 0.24);
+  --accent: #d86f32;
+  --accent-strong: #f0934d;
+  --accent-soft: #55d6c2;
+  --accent-warm: #ffbf75;
+  --accent-green: #55d6c2;
+  --shadow-soft: 0 24px 64px rgba(0, 0, 0, 0.26);
+  --shadow-strong: 0 30px 90px rgba(0, 0, 0, 0.42);
+  color: var(--text);
+  background:
+    linear-gradient(110deg, rgba(23, 20, 17, 0.98), rgba(36, 29, 24, 0.9) 44%, rgba(13, 27, 31, 0.96)),
+    var(--bg);
+}
+
+body.landing-page .ambient-grid {
+  background-image:
+    linear-gradient(rgba(255, 247, 237, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 247, 237, 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 92%);
+}
+
+body.landing-page .ambient-orb-one {
+  background: rgba(216, 111, 50, 0.32);
+}
+
+body.landing-page .ambient-orb-two {
+  background: rgba(85, 214, 194, 0.18);
+}
+
+body.landing-page .site-header {
+  border-color: rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.72);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+body.landing-page .site-header.is-scrolled {
+  background: rgba(23, 20, 17, 0.88);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.32);
+}
+
+body.landing-page .brand-mark {
+  background: linear-gradient(135deg, var(--accent), #ffb36f);
+  color: #171411;
+}
+
+body.landing-page .brand-role,
+body.landing-page .site-nav a,
+body.landing-page .header-github,
+body.landing-page .hero-text,
+body.landing-page .section-text,
+body.landing-page .about-card p,
+body.landing-page .project-copy p,
+body.landing-page .contact-card span,
+body.landing-page .site-footer {
+  color: var(--text-soft);
+}
+
+body.landing-page .eyebrow,
+body.landing-page .panel-label,
+body.landing-page .project-index,
+body.landing-page .contact-label {
+  color: var(--accent-strong);
+}
+
+body.landing-page .header-github,
+body.landing-page .button-secondary,
+body.landing-page .button-ghost,
+body.landing-page .hero-chip-link,
+body.landing-page .hero-panel-card,
+body.landing-page .about-card,
+body.landing-page .skill-card,
+body.landing-page .resume-card,
+body.landing-page .contact-card {
+  border-color: rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.68);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+}
+
+body.landing-page .button-primary {
+  background: linear-gradient(135deg, var(--accent), #ff9b52);
+  color: #171411;
+  box-shadow: 0 18px 40px rgba(216, 111, 50, 0.24);
+}
+
+body.landing-page .button-secondary:hover,
+body.landing-page .button-ghost:hover,
+body.landing-page .hero-chip-link:hover,
+body.landing-page .contact-card:hover,
+body.landing-page .header-github:hover {
+  border-color: rgba(85, 214, 194, 0.34);
+  background: rgba(23, 20, 17, 0.9);
+  color: var(--text);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.32);
+}
+
+body.landing-page .hero-panel-card-primary {
+  background:
+    radial-gradient(circle at top right, rgba(85, 214, 194, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(31, 26, 22, 0.96), rgba(18, 24, 24, 0.92));
+}
+
+body.landing-page .projects-section {
+  position: relative;
+  overflow: visible;
+  border-color: rgba(255, 247, 237, 0.15);
+  background:
+    linear-gradient(rgba(85, 214, 194, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 214, 194, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 17% 14%, rgba(216, 111, 50, 0.22), transparent 26rem),
+    radial-gradient(circle at 84% 28%, rgba(85, 214, 194, 0.17), transparent 24rem),
+    linear-gradient(135deg, rgba(14, 22, 22, 0.98), rgba(29, 22, 18, 0.98));
+  background-size: 28px 28px, 28px 28px, auto, auto, auto;
+  box-shadow:
+    inset 0 0 0 1px rgba(85, 214, 194, 0.06),
+    var(--shadow-strong);
+}
+
+body.landing-page .projects-section::before,
+body.landing-page .projects-section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+body.landing-page .projects-section::before {
+  inset: 1.1rem;
+  border: 1px solid rgba(85, 214, 194, 0.12);
+}
+
+body.landing-page .projects-section::after {
+  inset: auto 0 0;
+  height: 12rem;
+  background: linear-gradient(0deg, rgba(23, 20, 17, 0.82), transparent);
+}
+
+body.landing-page .projects-section .section-intro-inverse h2,
+body.landing-page .projects-section .section-intro-inverse .section-text {
+  color: var(--text);
+}
+
+body.landing-page .project-circuit-router {
+  position: relative;
+  z-index: 2;
+  min-height: 24rem;
+  margin: 2rem 0 2.4rem;
+  border: 1px solid rgba(255, 247, 237, 0.14);
+  background:
+    radial-gradient(circle at 14% 50%, rgba(216, 111, 50, 0.16), transparent 13rem),
+    linear-gradient(135deg, rgba(20, 31, 29, 0.74), rgba(20, 18, 16, 0.88));
+  box-shadow:
+    inset 0 0 0 1px rgba(85, 214, 194, 0.06),
+    0 24px 62px rgba(0, 0, 0, 0.24);
+}
+
+body.landing-page .project-circuit-router::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 247, 237, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 247, 237, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+body.landing-page .project-circuit-traces {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body.landing-page .landing-trace {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+body.landing-page .landing-trace-backbone {
+  stroke: rgba(255, 247, 237, 0.16);
+  stroke-width: 10;
+}
+
+body.landing-page .landing-trace-live {
+  filter: url(#landingTraceGlow);
+  stroke: var(--accent-soft);
+  stroke-dasharray: 18 30;
+  stroke-width: 6;
+  animation: landingRouteElectricity 2.8s linear infinite;
+  opacity: 0.9;
+  transition:
+    opacity 180ms ease,
+    stroke-width 180ms ease;
+}
+
+body.landing-page .landing-trace-cuda,
+body.landing-page .landing-trace-multiplayer {
+  stroke: #f0934d;
+}
+
+body.landing-page .landing-trace-pokemon {
+  animation-delay: -0.9s;
+}
+
+body.landing-page .landing-trace-multiplayer {
+  animation-delay: -1.7s;
+}
+
+body.landing-page .landing-solder {
+  fill: rgba(255, 247, 237, 0.9);
+  filter: url(#landingTraceGlow);
+  stroke: rgba(85, 214, 194, 0.76);
+  stroke-width: 4;
+}
+
+body.landing-page .landing-solder-core {
+  fill: var(--accent);
+}
+
+body.landing-page .project-router-chip {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  z-index: 2;
+  display: grid;
+  gap: 0.35rem;
+  width: 16rem;
+  min-height: 11rem;
+  padding: 1.4rem;
+  place-content: center;
+  border: 1px solid rgba(255, 247, 237, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 247, 237, 0.12), rgba(255, 247, 237, 0.04)),
+    rgba(12, 15, 15, 0.92);
+  box-shadow:
+    0 20px 44px rgba(0, 0, 0, 0.36),
+    inset 0 0 28px rgba(85, 214, 194, 0.08);
+  transform: translateY(-50%);
+}
+
+body.landing-page .project-router-chip span,
+body.landing-page .project-circuit-node span {
+  color: var(--accent-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.landing-page .project-router-chip strong {
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+body.landing-page .project-circuit-links {
+  position: absolute;
+  inset: 2rem 1.6rem 2rem auto;
+  z-index: 2;
+  display: grid;
+  width: min(38rem, calc(100% - 24rem));
+  gap: 1rem;
+}
+
+body.landing-page .project-circuit-node {
+  position: relative;
+  display: grid;
+  align-content: center;
+  gap: 0.38rem;
+  min-height: 5.9rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 247, 237, 0.16);
+  background: rgba(23, 20, 17, 0.76);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+body.landing-page .project-circuit-node strong {
+  font-size: 1.12rem;
+}
+
+body.landing-page .project-circuit-node small {
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+body.landing-page .project-circuit-node:hover,
+body.landing-page .project-circuit-node:focus-visible {
+  transform: translateX(-4px);
+  border-color: rgba(85, 214, 194, 0.78);
+  background: rgba(23, 20, 17, 0.96);
+  box-shadow:
+    0 26px 58px rgba(0, 0, 0, 0.34),
+    0 0 34px rgba(85, 214, 194, 0.15);
+}
+
+body.landing-page .project-circuit-node:focus-visible {
+  outline: 2px solid rgba(85, 214, 194, 0.86);
+  outline-offset: 4px;
+}
+
+body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:hover) .landing-trace-live:not(.landing-trace-cuda),
+body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:focus-visible) .landing-trace-live:not(.landing-trace-cuda),
+body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:hover) .landing-trace-live:not(.landing-trace-pokemon),
+body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:focus-visible) .landing-trace-live:not(.landing-trace-pokemon),
+body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:hover) .landing-trace-live:not(.landing-trace-multiplayer),
+body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:focus-visible) .landing-trace-live:not(.landing-trace-multiplayer) {
+  opacity: 0.22;
+}
+
+body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:hover) .landing-trace-cuda,
+body.landing-page .project-circuit-router:has(.project-circuit-node-cuda:focus-visible) .landing-trace-cuda,
+body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:hover) .landing-trace-pokemon,
+body.landing-page .project-circuit-router:has(.project-circuit-node-pokemon:focus-visible) .landing-trace-pokemon,
+body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:hover) .landing-trace-multiplayer,
+body.landing-page .project-circuit-router:has(.project-circuit-node-multiplayer:focus-visible) .landing-trace-multiplayer {
+  opacity: 1;
+  stroke-width: 9;
+}
+
+body.landing-page .project-stack {
+  z-index: 2;
+  gap: 1.55rem;
+}
+
+body.landing-page .project-card {
+  position: relative;
+  isolation: isolate;
+  border-color: rgba(255, 247, 237, 0.15);
+  background:
+    linear-gradient(135deg, rgba(255, 247, 237, 0.08), rgba(255, 247, 237, 0.03)),
+    rgba(18, 17, 15, 0.88);
+  color: var(--text);
+  box-shadow:
+    inset 0 0 0 1px rgba(85, 214, 194, 0.04),
+    0 28px 72px rgba(0, 0, 0, 0.28);
+}
+
+body.landing-page .project-card::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 3px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(85, 214, 194, 0.18),
+      rgba(85, 214, 194, 0.18) 32%,
+      rgba(85, 214, 194, 0.95) 42%,
+      rgba(240, 147, 77, 0.95) 48%,
+      rgba(85, 214, 194, 0.18) 58%,
+      rgba(85, 214, 194, 0.18)
+    );
+  background-size: 240px 100%;
+  box-shadow: 0 0 22px rgba(85, 214, 194, 0.34);
+  animation: landingCardPulse 2.2s linear infinite;
+}
+
+body.landing-page .project-card::after {
+  content: "";
+  position: absolute;
+  top: 0.83rem;
+  right: 1.1rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  pointer-events: none;
+  background: var(--accent);
+  box-shadow:
+    -1.5rem 0 0 rgba(85, 214, 194, 0.86),
+    -3rem 0 0 rgba(255, 247, 237, 0.62),
+    0 0 22px rgba(216, 111, 50, 0.62);
+}
+
+body.landing-page .project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.landing-page .project-card-ml::before {
+  animation-delay: -0.7s;
+}
+
+body.landing-page .project-card-systems::before {
+  animation-delay: -1.35s;
+}
+
+body.landing-page .project-impact {
+  color: var(--text);
+}
+
+body.landing-page .project-summary,
+body.landing-page .project-copy p,
+body.landing-page .project-points li,
+body.landing-page .stat-label,
+body.landing-page .media-placeholder-header,
+body.landing-page .media-metrics span,
+body.landing-page .project-evidence-caption span:last-child {
+  color: var(--text-soft);
+}
+
+body.landing-page .project-points li::before {
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px rgba(85, 214, 194, 0.42);
+}
+
+body.landing-page .tag-list li,
+body.landing-page .stat-card,
+body.landing-page .media-placeholder,
+body.landing-page .project-evidence-frame,
+body.landing-page .project-evidence-caption,
+body.landing-page .network-diagram span,
+body.landing-page .media-metrics span {
+  border-color: rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.62);
+  color: var(--text);
+}
+
+body.landing-page .tag-list li {
+  box-shadow: inset 0 0 0 1px rgba(85, 214, 194, 0.03);
+}
+
+body.landing-page .stat-card {
+  box-shadow:
+    inset 0 0 26px rgba(85, 214, 194, 0.05),
+    0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.landing-page .stat-value {
+  color: var(--accent-soft);
+  text-shadow: 0 0 18px rgba(85, 214, 194, 0.18);
+}
+
+body.landing-page .media-placeholder {
+  background:
+    linear-gradient(rgba(255, 247, 237, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 247, 237, 0.03) 1px, transparent 1px),
+    rgba(15, 18, 17, 0.72);
+  background-size: 30px 30px, 30px 30px, auto;
+}
+
+body.landing-page .project-evidence-frame {
+  background: rgba(10, 12, 12, 0.84);
+}
+
+body.landing-page .project-evidence-card:hover .project-evidence-frame,
+body.landing-page .project-evidence-card:focus-within .project-evidence-frame {
+  border-color: rgba(85, 214, 194, 0.52);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.44),
+    0 0 32px rgba(85, 214, 194, 0.16);
+}
+
+body.landing-page .project-evidence-badge-baseline,
+body.landing-page .project-evidence-badge-trace,
+body.landing-page .project-evidence-badge-cpu {
+  background: rgba(216, 111, 50, 0.16);
+  color: #ffbf75;
+}
+
+body.landing-page .project-evidence-badge-optimized,
+body.landing-page .project-evidence-badge-gpu {
+  background: rgba(85, 214, 194, 0.14);
+  color: #7ee8d9;
+}
+
+body.landing-page .contact-icon {
+  border-color: rgba(255, 247, 237, 0.16);
+}
+
+body.landing-page .contact-icon-github,
+body.landing-page .contact-icon-linkedin,
+body.landing-page .contact-icon-message {
+  background: rgba(255, 247, 237, 0.08);
+  color: var(--accent-soft);
+}
+
+body.landing-page .project-lightbox {
+  background: rgba(8, 8, 7, 0.7);
+}
+
+body.landing-page .project-lightbox-shell,
+body.landing-page .project-lightbox-media,
+body.landing-page .project-lightbox-close {
+  border-color: rgba(255, 247, 237, 0.16);
+  background: rgba(23, 20, 17, 0.96);
+  color: var(--text);
+}
+
+body.landing-page .project-lightbox-body {
+  color: var(--text-soft);
+}
+
+@keyframes landingRouteElectricity {
+  from {
+    stroke-dashoffset: 96;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes landingCardPulse {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 240px 0;
+  }
+}
+
+body.resume-page {
+  --bg: #171411;
+  --bg-soft: rgba(23, 20, 17, 0.78);
+  --surface: #211a16;
+  --surface-muted: #2a211c;
+  --surface-strong: #171411;
+  --surface-strong-alt: #fff7ed;
+  --text: #fff7ed;
+  --text-soft: #d8c7b6;
+  --text-inverse: #fff7ed;
+  --line: rgba(255, 247, 237, 0.14);
+  --line-strong: rgba(255, 247, 237, 0.24);
+  --accent: #d86f32;
+  --accent-strong: #f0934d;
+  --accent-soft: #55d6c2;
+  --accent-warm: #ffbf75;
+  --accent-green: #55d6c2;
+  --shadow-soft: 0 24px 64px rgba(0, 0, 0, 0.26);
+  --shadow-strong: 0 30px 90px rgba(0, 0, 0, 0.42);
+  color: var(--text);
+  background:
+    linear-gradient(110deg, rgba(23, 20, 17, 0.98), rgba(36, 29, 24, 0.9) 44%, rgba(13, 27, 31, 0.96)),
+    var(--bg);
+}
+
+body.resume-page .ambient-grid {
+  background-image:
+    linear-gradient(rgba(255, 247, 237, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 247, 237, 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 92%);
+}
+
+body.resume-page .ambient-orb-one {
+  background: rgba(216, 111, 50, 0.32);
+}
+
+body.resume-page .ambient-orb-two {
+  background: rgba(85, 214, 194, 0.18);
+}
+
+body.resume-page .site-header {
+  border-color: rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.72);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+body.resume-page .site-header.is-scrolled {
+  background: rgba(23, 20, 17, 0.88);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.32);
+}
+
+body.resume-page .brand-mark {
+  background: linear-gradient(135deg, var(--accent), #ffb36f);
+  color: #171411;
+}
+
+body.resume-page .brand-role,
+body.resume-page .site-nav a,
+body.resume-page .header-github,
+body.resume-page .resume-lead,
+body.resume-page .resume-viewer-copy,
+body.resume-page .site-footer {
+  color: var(--text-soft);
+}
+
+body.resume-page .eyebrow {
+  color: var(--accent-strong);
+}
+
+body.resume-page .header-github,
+body.resume-page .button-secondary {
+  border-color: rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.68);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+}
+
+body.resume-page .button-primary {
+  background: linear-gradient(135deg, var(--accent), #ff9b52);
+  color: #171411;
+  box-shadow: 0 18px 40px rgba(216, 111, 50, 0.24);
+}
+
+body.resume-page .button-secondary:hover,
+body.resume-page .header-github:hover {
+  border-color: rgba(85, 214, 194, 0.34);
+  background: rgba(23, 20, 17, 0.9);
+  color: var(--text);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.32);
+}
+
+body.resume-page .resume-hero {
+  padding-top: 4.8rem;
+}
+
+body.resume-page .resume-viewer-shell {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255, 247, 237, 0.15);
+  background:
+    linear-gradient(rgba(85, 214, 194, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 214, 194, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(216, 111, 50, 0.2), transparent 24rem),
+    radial-gradient(circle at 84% 18%, rgba(85, 214, 194, 0.14), transparent 22rem),
+    linear-gradient(135deg, rgba(14, 22, 22, 0.98), rgba(29, 22, 18, 0.98));
+  background-size: 28px 28px, 28px 28px, auto, auto, auto;
+  box-shadow:
+    inset 0 0 0 1px rgba(85, 214, 194, 0.06),
+    var(--shadow-strong);
+}
+
+body.resume-page .resume-viewer-shell::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  pointer-events: none;
+  border: 1px solid rgba(85, 214, 194, 0.12);
+}
+
+body.resume-page .resume-viewer-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.resume-page .resume-viewer-header {
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid rgba(255, 247, 237, 0.14);
+  background: rgba(23, 20, 17, 0.68);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+body.resume-page .resume-viewer-frame {
+  border-color: rgba(85, 214, 194, 0.26);
+  background: #ffffff;
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
 .resume-page .site-main {
   padding-bottom: 2rem;
 }
@@ -1297,6 +1971,52 @@ body.lightbox-open {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  body.landing-page .project-circuit-router {
+    display: grid;
+    min-height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  body.landing-page .project-circuit-traces {
+    display: none;
+  }
+
+  body.landing-page .project-router-chip,
+  body.landing-page .project-circuit-links {
+    position: relative;
+    inset: auto;
+    width: auto;
+    transform: none;
+  }
+
+  body.landing-page .project-router-chip {
+    min-height: auto;
+  }
+
+  body.landing-page .project-circuit-links {
+    gap: 0.75rem;
+  }
+
+  body.landing-page .project-router-chip::after,
+  body.landing-page .project-circuit-node:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    bottom: -1rem;
+    width: 3px;
+    height: 1rem;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(85, 214, 194, 0.16),
+        rgba(85, 214, 194, 0.96),
+        rgba(240, 147, 77, 0.96),
+        rgba(85, 214, 194, 0.16)
+      );
+    box-shadow: 0 0 18px rgba(85, 214, 194, 0.38);
+  }
 }
 
 @media (max-width: 760px) {
@@ -1333,6 +2053,10 @@ body.lightbox-open {
     width: min(calc(100% - 1rem), calc(var(--max-width) + 1rem));
     padding: 1rem;
     border-radius: 1.6rem;
+  }
+
+  body.landing-page .project-circuit-router {
+    margin: 1rem 0;
   }
 
   .hero-panel-grid,

@@ -22,7 +22,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--test-text);
   background:
     linear-gradient(110deg, rgba(23, 20, 17, 0.96), rgba(36, 29, 24, 0.84) 46%, rgba(13, 27, 31, 0.95)),
@@ -50,7 +50,90 @@ a {
   width: 100%;
   height: 100%;
   background: transparent;
-  cursor: crosshair;
+  cursor: grab;
+  touch-action: none;
+}
+
+body.is-project-target:not(.is-globe-dragging),
+body.is-project-target:not(.is-globe-dragging) #particle-globe {
+  cursor: pointer;
+}
+
+body.is-globe-dragging,
+body.is-globe-dragging #particle-globe {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.cluster-label-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cluster-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  max-width: min(16rem, calc(100vw - 2rem));
+  padding: 0.54rem 0.72rem;
+  border: 1px solid rgba(255, 247, 237, 0.22);
+  background: rgba(23, 20, 17, 0.92);
+  color: var(--test-text);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  visibility: hidden;
+  white-space: nowrap;
+  transition:
+    opacity 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+  will-change: transform, opacity;
+}
+
+.cluster-label::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.5rem;
+  background: var(--test-accent);
+  box-shadow: 0 0 18px rgba(216, 111, 50, 0.74);
+}
+
+.cluster-label.is-visible {
+  opacity: 0.96;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.cluster-label.is-active,
+.cluster-label:hover,
+.cluster-label:focus-visible {
+  border-color: rgba(85, 214, 194, 0.76);
+  background: rgba(23, 20, 17, 0.98);
+  color: #ffffff;
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, 0.34),
+    0 0 28px rgba(85, 214, 194, 0.16);
+  opacity: 1;
+}
+
+.cluster-label:focus-visible {
+  outline: 2px solid rgba(85, 214, 194, 0.86);
+  outline-offset: 3px;
 }
 
 .test-page::before {
@@ -81,7 +164,7 @@ a {
   top: 1.25rem;
   left: 1.25rem;
   right: 1.25rem;
-  z-index: 2;
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,6 +275,273 @@ a {
   text-transform: uppercase;
 }
 
+.circuit-section {
+  position: relative;
+  z-index: 4;
+  min-height: 100vh;
+  padding: 7rem max(1rem, calc((100vw - 1180px) / 2)) 6rem;
+  background:
+    linear-gradient(rgba(85, 214, 194, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 214, 194, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 20% 16%, rgba(216, 111, 50, 0.16), transparent 28rem),
+    radial-gradient(circle at 82% 32%, rgba(85, 214, 194, 0.16), transparent 24rem),
+    linear-gradient(135deg, rgba(14, 22, 22, 0.98), rgba(29, 22, 18, 0.98));
+  background-size: 28px 28px, 28px 28px, auto, auto, auto;
+  border-top: 1px solid rgba(255, 247, 237, 0.12);
+  box-shadow: 0 -28px 80px rgba(0, 0, 0, 0.38);
+}
+
+.circuit-intro {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.circuit-intro h2 {
+  max-width: 11ch;
+  margin: 0 0 1rem;
+  font-size: 5.2rem;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.circuit-intro p:last-child {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--test-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.circuit-board {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 247, 237, 0.15);
+  background:
+    radial-gradient(circle at 22% 50%, rgba(216, 111, 50, 0.14), transparent 12rem),
+    linear-gradient(135deg, rgba(20, 31, 29, 0.78), rgba(20, 18, 16, 0.9));
+  box-shadow:
+    inset 0 0 0 1px rgba(85, 214, 194, 0.06),
+    0 34px 80px rgba(0, 0, 0, 0.3);
+}
+
+.circuit-board::before,
+.circuit-board::after {
+  content: "";
+  position: absolute;
+  inset: 1.2rem;
+  pointer-events: none;
+}
+
+.circuit-board::before {
+  background-image:
+    linear-gradient(rgba(255, 247, 237, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 247, 237, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.7;
+}
+
+.circuit-board::after {
+  border: 1px solid rgba(85, 214, 194, 0.12);
+}
+
+.circuit-traces {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.trace {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trace-backbone {
+  stroke: rgba(255, 247, 237, 0.18);
+  stroke-width: 10;
+}
+
+.trace-project {
+  filter: url(#traceGlow);
+  stroke: var(--test-cyan);
+  stroke-dasharray: 16 30;
+  stroke-width: 6;
+  opacity: 0.88;
+  animation: routeElectricity 2.6s linear infinite;
+  transition:
+    opacity 180ms ease,
+    stroke-width 180ms ease;
+}
+
+.trace-delay-one {
+  animation-delay: -0.9s;
+}
+
+.trace-delay-two {
+  animation-delay: -1.7s;
+}
+
+.trace-pokemon {
+  animation-delay: -0.7s;
+  stroke: #55d6c2;
+}
+
+.trace-mandelbrot,
+.trace-multiplayer {
+  stroke: #f0934d;
+}
+
+.solder {
+  fill: rgba(255, 247, 237, 0.88);
+  filter: url(#traceGlow);
+  stroke: rgba(85, 214, 194, 0.74);
+  stroke-width: 4;
+}
+
+.solder-core {
+  fill: var(--test-accent);
+}
+
+.chip {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  display: grid;
+  gap: 0.35rem;
+  width: 13rem;
+  min-height: 9rem;
+  padding: 1.15rem;
+  place-content: center;
+  color: var(--test-text);
+  background:
+    linear-gradient(135deg, rgba(255, 247, 237, 0.12), rgba(255, 247, 237, 0.04)),
+    rgba(12, 15, 15, 0.9);
+  border: 1px solid rgba(255, 247, 237, 0.18);
+  box-shadow:
+    0 20px 44px rgba(0, 0, 0, 0.36),
+    inset 0 0 28px rgba(85, 214, 194, 0.08);
+  transform: translateY(-50%);
+}
+
+.chip span,
+.node-index {
+  color: var(--test-cyan);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chip strong {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+.circuit-node {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  gap: 0.54rem;
+  width: min(20rem, calc(100% - 2rem));
+  padding: 1rem;
+  border: 1px solid rgba(255, 247, 237, 0.16);
+  background: rgba(23, 20, 17, 0.84);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.circuit-node strong {
+  color: var(--test-text);
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.circuit-node span:last-child {
+  color: var(--test-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.circuit-node:hover,
+.circuit-node:focus-visible {
+  border-color: rgba(85, 214, 194, 0.78);
+  box-shadow:
+    0 26px 58px rgba(0, 0, 0, 0.34),
+    0 0 34px rgba(85, 214, 194, 0.14);
+  transform: translateY(-4px);
+}
+
+.circuit-board:has(.node-mandelbrot:hover) .trace-project:not(.trace-mandelbrot),
+.circuit-board:has(.node-mandelbrot:focus-visible) .trace-project:not(.trace-mandelbrot),
+.circuit-board:has(.node-pokemon:hover) .trace-project:not(.trace-pokemon),
+.circuit-board:has(.node-pokemon:focus-visible) .trace-project:not(.trace-pokemon),
+.circuit-board:has(.node-multiplayer:hover) .trace-project:not(.trace-multiplayer),
+.circuit-board:has(.node-multiplayer:focus-visible) .trace-project:not(.trace-multiplayer) {
+  opacity: 0.22;
+}
+
+.circuit-board:has(.node-mandelbrot:hover) .trace-mandelbrot,
+.circuit-board:has(.node-mandelbrot:focus-visible) .trace-mandelbrot,
+.circuit-board:has(.node-pokemon:hover) .trace-pokemon,
+.circuit-board:has(.node-pokemon:focus-visible) .trace-pokemon,
+.circuit-board:has(.node-multiplayer:hover) .trace-multiplayer,
+.circuit-board:has(.node-multiplayer:focus-visible) .trace-multiplayer {
+  opacity: 1;
+  stroke-width: 9;
+}
+
+.circuit-node:focus-visible {
+  outline: 2px solid rgba(85, 214, 194, 0.86);
+  outline-offset: 4px;
+}
+
+.node-mandelbrot {
+  top: 6.8rem;
+  right: 4.4rem;
+}
+
+.node-pokemon {
+  right: 2.8rem;
+  bottom: 3.2rem;
+}
+
+.node-multiplayer {
+  right: 5rem;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.node-multiplayer:hover,
+.node-multiplayer:focus-visible {
+  transform: translateY(calc(-50% - 4px));
+}
+
+@keyframes routeElectricity {
+  from {
+    stroke-dashoffset: 92;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mobileCircuitPulse {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 120px;
+  }
+}
+
 @media (max-width: 760px) {
   .test-nav {
     position: absolute;
@@ -214,6 +564,94 @@ a {
     max-width: 7ch;
     font-size: 4.2rem;
   }
+
+  .globe-status {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: none;
+    text-align: center;
+  }
+
+  .circuit-section {
+    padding: 5.5rem 1rem 4.5rem;
+  }
+
+  .circuit-intro h2 {
+    max-width: 10ch;
+    font-size: 3.4rem;
+  }
+
+  .circuit-board {
+    min-height: 860px;
+  }
+
+  .circuit-traces {
+    display: none;
+  }
+
+  .chip,
+  .circuit-node {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    transform: none;
+  }
+
+  .chip::after,
+  .node-mandelbrot::after,
+  .node-multiplayer::after {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    bottom: -4.55rem;
+    width: 3px;
+    height: 4.55rem;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(85, 214, 194, 0.16),
+        rgba(85, 214, 194, 0.16) 38%,
+        rgba(85, 214, 194, 0.96) 48%,
+        rgba(240, 147, 77, 0.96) 56%,
+        rgba(85, 214, 194, 0.16) 68%,
+        rgba(85, 214, 194, 0.16)
+      );
+    background-size: 100% 120px;
+    box-shadow: 0 0 22px rgba(85, 214, 194, 0.4);
+    animation: mobileCircuitPulse 1.8s linear infinite;
+  }
+
+  .node-mandelbrot::after {
+    animation-delay: -0.45s;
+  }
+
+  .node-multiplayer::after {
+    animation-delay: -0.9s;
+  }
+
+  .chip {
+    top: 2rem;
+    min-height: 7.5rem;
+  }
+
+  .node-mandelbrot {
+    top: 12rem;
+  }
+
+  .node-multiplayer {
+    top: 25.5rem;
+  }
+
+  .node-pokemon {
+    top: 39rem;
+    bottom: auto;
+  }
+
+  .node-multiplayer:hover,
+  .node-multiplayer:focus-visible {
+    transform: translateY(-4px);
+  }
 }
 
 @media (min-width: 1180px) {
@@ -229,5 +667,9 @@ a {
 
   .test-nav a {
     transition: none;
+  }
+
+  .trace-project {
+    animation: none;
   }
 }

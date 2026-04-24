@@ -30,6 +30,7 @@
         <a class="test-brand" href="index.html">Damian Saelee</a>
         <nav>
           <a href="index.html#projects">Projects</a>
+          <a href="#circuit-projects">Circuit</a>
           <a href="resume.html">Resume</a>
         </nav>
       </header>
@@ -46,6 +47,77 @@
       <div class="globe-status" aria-live="polite">
         <span id="globe-status-text">Loading globe</span>
       </div>
+
+      <section class="circuit-section" id="circuit-projects" aria-labelledby="circuit-title">
+        <div class="circuit-intro">
+          <p class="test-kicker">Project routing layer</p>
+          <h2 id="circuit-title">Circuit paths into selected engineering work.</h2>
+          <p>
+            A motherboard-inspired navigation test: each energized trace routes to a project
+            area from the main portfolio. Hover a terminal to highlight its path, or click the
+            connected module to jump directly to the project.
+          </p>
+        </div>
+
+        <div class="circuit-board" aria-label="Interactive circuit project map">
+          <svg class="circuit-traces" viewBox="0 0 1180 620" aria-hidden="true">
+            <defs>
+              <filter id="traceGlow">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path
+              class="trace trace-backbone"
+              d="M120 310 H310 V175 H520 V118 H815 V170 H990"
+            />
+            <path
+              class="trace trace-backbone trace-delay-one"
+              d="M120 310 H315 V315 H560 V445 H785 V505 H1015"
+            />
+            <path
+              class="trace trace-backbone trace-delay-two"
+              d="M120 310 H305 V420 H450 V515 H650 V420 H1000"
+            />
+
+            <path class="trace trace-project trace-mandelbrot" d="M585 118 H815 V170 H990" />
+            <path class="trace trace-project trace-pokemon" d="M560 445 H785 V505 H1015" />
+            <path class="trace trace-project trace-multiplayer" d="M650 420 H1000" />
+
+            <circle class="solder solder-core" cx="120" cy="310" r="10" />
+            <circle class="solder solder-mandelbrot" cx="990" cy="170" r="10" />
+            <circle class="solder solder-pokemon" cx="1015" cy="505" r="10" />
+            <circle class="solder solder-multiplayer" cx="1000" cy="420" r="10" />
+          </svg>
+
+          <div class="chip chip-core" aria-hidden="true">
+            <span>Portfolio bus</span>
+            <strong>Project Router</strong>
+          </div>
+
+          <a class="circuit-node node-mandelbrot" href="index.html#project-mandelbrot">
+            <span class="node-index">01</span>
+            <strong>CUDA Mandelbrot</strong>
+            <span>GPU rendering, Nsight profiling, 370x speedup</span>
+          </a>
+
+          <a class="circuit-node node-pokemon" href="index.html#project-pokemon">
+            <span class="node-index">02</span>
+            <strong>Pokemon Classifier</strong>
+            <span>PyTorch pipeline tuning, 200s to 66s training runtime</span>
+          </a>
+
+          <a class="circuit-node node-multiplayer" href="index.html#project-multiplayer">
+            <span class="node-index">03</span>
+            <strong>Multiplayer Systems</strong>
+            <span>Server-authoritative Unity architecture and backend exploration</span>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -7,7 +7,7 @@
       name="description"
       content="Damian Saelee is a Computer Science student focused on GPU programming, machine learning systems, performance engineering, parallel computing, and systems-oriented software development."
     />
-    <meta name="theme-color" content="#f7f2ea" />
+    <meta name="theme-color" content="#171411" />
     <meta property="og:title" content="Damian Saelee | GPU Programming, ML, and Systems Portfolio" />
     <meta
       property="og:description"
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="landing-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <div class="site-shell">
@@ -218,6 +218,53 @@
               measurable engineering results.
             </p>
           </div>
+
+          <nav class="project-circuit-router" aria-label="Project circuit shortcuts" data-reveal>
+            <svg class="project-circuit-traces" viewBox="0 0 1100 260" aria-hidden="true">
+              <defs>
+                <filter id="landingTraceGlow">
+                  <feGaussianBlur stdDeviation="3.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path class="landing-trace landing-trace-backbone" d="M110 130 H330 V68 H465 V46 H545" />
+              <path class="landing-trace landing-trace-backbone" d="M110 130 H545" />
+              <path class="landing-trace landing-trace-backbone" d="M110 130 H330 V192 H465 V214 H545" />
+              <path class="landing-trace landing-trace-live landing-trace-cuda" d="M110 130 H330 V68 H465 V46 H545" />
+              <path class="landing-trace landing-trace-live landing-trace-pokemon" d="M110 130 H545" />
+              <path class="landing-trace landing-trace-live landing-trace-multiplayer" d="M110 130 H330 V192 H465 V214 H545" />
+              <circle class="landing-solder landing-solder-core" cx="110" cy="130" r="9" />
+              <circle class="landing-solder" cx="545" cy="46" r="8" />
+              <circle class="landing-solder" cx="545" cy="130" r="8" />
+              <circle class="landing-solder" cx="545" cy="214" r="8" />
+            </svg>
+
+            <div class="project-router-chip" aria-hidden="true">
+              <span>Project bus</span>
+              <strong>Selected Work</strong>
+            </div>
+
+            <div class="project-circuit-links">
+              <a class="project-circuit-node project-circuit-node-cuda" href="#project-mandelbrot">
+                <span>Route 01</span>
+                <strong>CUDA Mandelbrot</strong>
+                <small>GPU renderer and Nsight-validated speedup</small>
+              </a>
+              <a class="project-circuit-node project-circuit-node-pokemon" href="#project-pokemon">
+                <span>Route 02</span>
+                <strong>Pok&eacute;mon Classifier</strong>
+                <small>PyTorch input pipeline and CUDA throughput tuning</small>
+              </a>
+              <a class="project-circuit-node project-circuit-node-multiplayer" href="#project-multiplayer">
+                <span>Route 03</span>
+                <strong>Multiplayer Systems</strong>
+                <small>Server-authoritative Unity and backend deployment flow</small>
+              </a>
+            </div>
+          </nav>
 
           <div class="project-stack">
             <article class="project-card project-card-cuda" id="project-mandelbrot" data-reveal>
