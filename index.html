@@ -230,18 +230,49 @@
                   </feMerge>
                 </filter>
               </defs>
-              <path class="landing-trace landing-trace-base" d="M250 180 H390 V72 H520" />
-              <path class="landing-trace landing-trace-base" d="M250 180 H520" />
-              <path class="landing-trace landing-trace-base" d="M250 180 H390 V288 H520" />
-              <path class="landing-trace landing-trace-flow landing-trace-flow-cuda" d="M250 180 H390 V72 H520" />
-              <path class="landing-trace landing-trace-flow landing-trace-flow-pokemon" d="M250 180 H520" />
-              <path class="landing-trace landing-trace-flow landing-trace-flow-multiplayer" d="M250 180 H390 V288 H520" />
+              <path class="landing-trace landing-trace-base" d="M250 180 H390" />
+              <path class="landing-trace landing-trace-base" d="M390 180 V72 H520" />
+              <path class="landing-trace landing-trace-base" d="M390 180 H520" />
+              <path class="landing-trace landing-trace-base" d="M390 180 V288 H520" />
+              <path class="landing-trace landing-trace-flow landing-trace-flow-bus" d="M250 180 H390" />
+              <path class="landing-trace landing-trace-flow landing-trace-flow-cuda" d="M390 180 V72 H520" />
+              <path class="landing-trace landing-trace-flow landing-trace-flow-pokemon" d="M390 180 H520" />
+              <path class="landing-trace landing-trace-flow landing-trace-flow-multiplayer" d="M390 180 V288 H520" />
+              <circle class="landing-charge landing-charge-bus" r="7">
+                <animateMotion
+                  dur="1.15s"
+                  repeatCount="indefinite"
+                  path="M250 180 H390"
+                />
+              </circle>
+              <circle class="landing-charge landing-charge-cuda" r="7">
+                <animateMotion
+                  dur="1.55s"
+                  repeatCount="indefinite"
+                  path="M390 180 V72 H520"
+                />
+              </circle>
+              <circle class="landing-charge landing-charge-pokemon" r="8">
+                <animateMotion
+                  dur="1.1s"
+                  repeatCount="indefinite"
+                  path="M390 180 H520"
+                />
+              </circle>
+              <circle class="landing-charge landing-charge-multiplayer" r="7">
+                <animateMotion
+                  dur="1.6s"
+                  repeatCount="indefinite"
+                  path="M390 180 V288 H520"
+                />
+              </circle>
               <circle class="landing-solder landing-solder-core" cx="250" cy="180" r="10" />
               <circle class="landing-solder landing-solder-junction" cx="390" cy="180" r="7" />
               <circle class="landing-solder" cx="520" cy="72" r="8" />
               <circle class="landing-solder" cx="520" cy="180" r="8" />
               <circle class="landing-solder" cx="520" cy="288" r="8" />
             </svg>
+            <span class="project-circuit-middle-connector" aria-hidden="true"></span>
 
             <div class="project-router-chip" aria-hidden="true">
               <span>Project bus</span>

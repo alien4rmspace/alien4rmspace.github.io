@@ -1388,10 +1388,36 @@ body.landing-page .project-circuit-router::before {
 body.landing-page .project-circuit-traces {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   overflow: visible;
   pointer-events: none;
+}
+
+body.landing-page .project-circuit-middle-connector {
+  position: absolute;
+  top: 50%;
+  right: calc(2rem + min(38rem, calc(100% - 28rem)));
+  left: calc(2rem + 17rem);
+  z-index: 2;
+  height: 0.62rem;
+  pointer-events: none;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 0.45rem,
+      rgba(255, 191, 117, 0.98) 0.45rem 2rem,
+      transparent 2rem 2.9rem
+    );
+  background-size: 5.8rem 100%;
+  box-shadow:
+    0 0 10px rgba(255, 191, 117, 0.72),
+    0 0 22px rgba(240, 147, 77, 0.42),
+    0 0 34px rgba(85, 214, 194, 0.18);
+  transform: translateY(-50%);
+  animation: landingMiddleConnectorFlow 0.95s linear infinite;
 }
 
 body.landing-page .landing-trace {
@@ -1408,25 +1434,54 @@ body.landing-page .landing-trace-base {
 body.landing-page .landing-trace-flow {
   filter: url(#landingTraceGlow);
   stroke: #f0934d;
-  stroke-dasharray: 20 28;
+  stroke-dasharray: 24 18;
   stroke-width: 7;
-  animation: landingRouteElectricity 2s linear infinite;
+  animation: landingRouteElectricity 1.6s linear infinite;
   opacity: 0.95;
 }
 
+body.landing-page .landing-trace-flow-bus {
+  stroke: #f0934d;
+  stroke-dasharray: 22 14;
+  stroke-width: 8;
+  animation-duration: 1.05s;
+}
+
 body.landing-page .landing-trace-flow-pokemon {
-  stroke: #ffb071;
-  stroke-width: 8.5;
-  animation-duration: 1.65s;
-  animation-delay: -0.55s;
+  stroke: var(--accent-soft);
+  stroke-dasharray: 24 14;
+  stroke-width: 10;
+  animation-duration: 0.95s;
+  animation-delay: -0.15s;
+  opacity: 1;
 }
 
 body.landing-page .landing-trace-flow-cuda {
-  animation-delay: -1.25s;
+  animation-delay: -0.55s;
 }
 
 body.landing-page .landing-trace-flow-multiplayer {
-  animation-delay: -0.95s;
+  animation-delay: -0.8s;
+}
+
+body.landing-page .landing-charge {
+  filter: url(#landingTraceGlow);
+  fill: var(--accent-warm);
+  opacity: 0.96;
+  pointer-events: none;
+}
+
+body.landing-page .landing-charge-pokemon {
+  fill: var(--accent-soft);
+  stroke: #ffb071;
+  stroke-width: 3;
+}
+
+body.landing-page .landing-charge-bus,
+body.landing-page .landing-charge-cuda,
+body.landing-page .landing-charge-multiplayer {
+  stroke: var(--accent-soft);
+  stroke-width: 2.5;
 }
 
 body.landing-page .landing-solder {
@@ -1740,6 +1795,16 @@ body.landing-page .project-lightbox-body {
   }
 }
 
+@keyframes landingMiddleConnectorFlow {
+  from {
+    background-position: 5.8rem 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
 @keyframes landingCardPulse {
   from {
     background-position: 0 0;
@@ -1990,6 +2055,10 @@ body.resume-page .resume-viewer-frame {
   }
 
   body.landing-page .project-circuit-traces {
+    display: none;
+  }
+
+  body.landing-page .project-circuit-middle-connector {
     display: none;
   }
 
