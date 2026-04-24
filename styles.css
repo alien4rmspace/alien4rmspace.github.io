@@ -1494,9 +1494,11 @@ body.landing-page .project-circuit-links {
 
 body.landing-page .project-circuit-node {
   position: relative;
+  isolation: isolate;
   display: grid;
   align-content: center;
   gap: 0.38rem;
+  overflow: hidden;
   min-height: 5.9rem;
   padding: 1rem 1.1rem;
   border: 1px solid rgba(255, 247, 237, 0.16);
@@ -1508,6 +1510,46 @@ body.landing-page .project-circuit-node {
     border-color 180ms ease,
     box-shadow 180ms ease,
     background-color 180ms ease;
+}
+
+body.landing-page .project-circuit-node::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -42%;
+  z-index: 0;
+  width: 42%;
+  height: 0.35rem;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(240, 147, 77, 0.18) 18%,
+    rgba(240, 147, 77, 0.95) 45%,
+    rgba(85, 214, 194, 0.98) 60%,
+    rgba(240, 147, 77, 0.2) 82%,
+    transparent 100%
+  );
+  border-radius: 999px;
+  box-shadow:
+    0 0 18px rgba(240, 147, 77, 0.42),
+    0 0 30px rgba(85, 214, 194, 0.24);
+  opacity: 0.9;
+  transform: translate(-120%, -50%);
+  animation: projectNodeElectricity 2.4s linear infinite;
+}
+
+body.landing-page .project-circuit-node-pokemon::before {
+  animation-delay: -0.8s;
+}
+
+body.landing-page .project-circuit-node-multiplayer::before {
+  animation-delay: -1.55s;
+}
+
+body.landing-page .project-circuit-node > * {
+  position: relative;
+  z-index: 1;
 }
 
 body.landing-page .project-circuit-node strong {
@@ -1736,6 +1778,16 @@ body.landing-page .project-lightbox-body {
 
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes projectNodeElectricity {
+  from {
+    transform: translate(-120%, -50%);
+  }
+
+  to {
+    transform: translate(360%, -50%);
   }
 }
 
